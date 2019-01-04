@@ -1,0 +1,35 @@
+{
+  "name": "bitfaced-web-app",
+  "version": "1.0.0",
+  "description": "Responsive React website using evergreen-ui and a Pippa Media Player Embed to create a simple and smooth BitFaced website UX.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p 80",
+    "pm2": "pm2 start npm -- start"
+  },
+  "keywords": [],
+  "author": "Phillip Dean",
+  "license": "ISC",
+  "dependencies": {
+    "evergreen-ui": "^4.8.0",
+    "install": "^0.12.2",
+    "next": "^7.0.2",
+    "next-eslint": "0.0.4",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-responsive": "^6.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.12.2",
+    "forever": "^0.15.3",
+    "npm": "^6.5.0"
+  }
+}
