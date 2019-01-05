@@ -41,6 +41,14 @@ class HomeContent extends React.Component {
             src={HomeContent.LOGO_URL}
           />
         </MediaQuery>
+        <MediaQuery orientation="portrait" minDeviceWidth={500}>
+          <img
+            id="bitfaced-logo-img"
+            style={logoStylesBigLandscape}
+            alt="BitFaced Podcast Logo with Eric and Tyler"
+            src={HomeContent.LOGO_URL}
+          />
+        </MediaQuery>
         <MediaQuery orientation="landscape" maxDeviceHeight={767}>
           <img
             id="bitfaced-logo-img"
