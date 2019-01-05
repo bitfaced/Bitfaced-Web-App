@@ -1,4 +1,4 @@
-1. Make a new feature branch with your changes off the HEAD of the develop branch.
+1. Make a new feature branch off the HEAD of the update to date develop branch.
 2. Change your desired changes and commit
 3. Squash commits into purposeful and consice commits only
 4. Rebase on HEAD of develop, fix conflicts, if needed
