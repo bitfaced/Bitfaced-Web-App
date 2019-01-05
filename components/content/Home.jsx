@@ -33,7 +33,7 @@ class HomeContent extends React.Component {
   render() {
     return (
       <div>
-        <MediaQuery orientation="portrait">
+        <MediaQuery orientation="portrait" minDeviceWidth={500}>
           <img
             id="bitfaced-logo-img"
             style={logoStylesPortrait}
@@ -41,7 +41,7 @@ class HomeContent extends React.Component {
             src={HomeContent.LOGO_URL}
           />
         </MediaQuery>
-        <MediaQuery orientation="portrait" minDeviceWidth={500}>
+        <MediaQuery orientation="portrait" maxDeviceWidth={501}>
           <img
             id="bitfaced-logo-img"
             style={logoStylesBigLandscape}
