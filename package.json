@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start -p 443",
-    "prod": "pm2 start npm --name 'next' -- start"
+    "start": "next start -p 80",
+    "pm2": "pm2 start npm -- start"
   },
   "keywords": [],
   "author": "Phillip Dean",
