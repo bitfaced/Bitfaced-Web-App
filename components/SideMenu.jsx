@@ -9,7 +9,7 @@ import { PropTypes } from 'prop-types';
 import { CONTENT_NODES, noop } from '../constants';
 
 class SideMenu extends React.Component {
-    propTypes = {
+    static propTypes = {
       onContentChange: PropTypes.func.isRequired,
     }
 
@@ -36,6 +36,7 @@ class SideMenu extends React.Component {
         onClick={this.onMenuItemClick}
         margin={10}
         title={content}
+        key={content}
       >
         {CONTENT_NODES[content].displayName}
       </Paragraph>

@@ -456,10 +456,6 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(SideMenu).call(this, props));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "propTypes", {
-      onContentChange: prop_types__WEBPACK_IMPORTED_MODULE_2__["PropTypes"].func.isRequired
-    });
-
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "onMenuItemClick", function (e) {
       var onContentChange = _this.props.onContentChange;
       onContentChange(e.target.title);
@@ -475,6 +471,7 @@ function (_React$Component) {
           onClick: _this.onMenuItemClick,
           margin: 10,
           title: content,
+          key: content,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 35
@@ -514,7 +511,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 69
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(evergreen_ui__WEBPACK_IMPORTED_MODULE_1__["SideSheet"], {
@@ -523,7 +520,7 @@ function (_React$Component) {
         onCloseComplete: onCloseComplete,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 70
         },
         __self: this
       }, menuItems), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(evergreen_ui__WEBPACK_IMPORTED_MODULE_1__["IconButton"], {
@@ -531,7 +528,7 @@ function (_React$Component) {
         onClick: this.toggleSideMenu,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 77
         },
         __self: this
       }));
@@ -540,6 +537,10 @@ function (_React$Component) {
 
   return SideMenu;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+_defineProperty(SideMenu, "propTypes", {
+  onContentChange: prop_types__WEBPACK_IMPORTED_MODULE_2__["PropTypes"].func.isRequired
+});
 
 /* harmony default export */ __webpack_exports__["default"] = (SideMenu);
 
@@ -995,6 +996,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 var logoStylesPortrait = {
@@ -1036,24 +1039,24 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 34
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_responsive__WEBPACK_IMPORTED_MODULE_1___default.a, {
         orientation: "portrait",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 35
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "bitfaced-logo-img",
         style: logoStylesPortrait,
         alt: "BitFaced Podcast Logo with Eric and Tyler",
-        src: "http://koboldcon.com/images/logo.png",
+        src: HomeContent.LOGO_URL,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 36
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_responsive__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1061,17 +1064,17 @@ function (_React$Component) {
         maxDeviceHeight: 767,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 43
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "bitfaced-logo-img",
         style: logoStylesLandscape,
         alt: "BitFaced Podcast Logo with Eric and Tyler",
-        src: "http://koboldcon.com/images/logo.png",
+        src: HomeContent.LOGO_URL,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 44
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_responsive__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -1079,17 +1082,17 @@ function (_React$Component) {
         minDeviceHeight: 768,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 51
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "bitfaced-logo-img",
         style: logoStylesBigLandscape,
         alt: "BitFaced Podcast Logo with Eric and Tyler",
-        src: "http://koboldcon.com/images/logo.png",
+        src: HomeContent.LOGO_URL,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 52
         },
         __self: this
       })));
@@ -1098,6 +1101,8 @@ function (_React$Component) {
 
   return HomeContent;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+_defineProperty(HomeContent, "LOGO_URL", 'https://s3.us-east-2.amazonaws.com/bitfaced/logo.png');
 
 /* harmony default export */ __webpack_exports__["default"] = (HomeContent);
 

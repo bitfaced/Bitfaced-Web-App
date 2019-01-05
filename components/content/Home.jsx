@@ -22,6 +22,8 @@ const logoStylesBigLandscape = {
 };
 
 class HomeContent extends React.Component {
+  static LOGO_URL = 'https://s3.us-east-2.amazonaws.com/bitfaced/logo.png';
+
   constructor(props) {
     super(props);
     this.state = {};
@@ -31,13 +33,28 @@ class HomeContent extends React.Component {
     return (
       <div>
         <MediaQuery orientation="portrait">
-          <img id="bitfaced-logo-img" style={logoStylesPortrait} alt="BitFaced Podcast Logo with Eric and Tyler" src="http://koboldcon.com/images/logo.png" />
+          <img
+            id="bitfaced-logo-img"
+            style={logoStylesPortrait}
+            alt="BitFaced Podcast Logo with Eric and Tyler"
+            src={HomeContent.LOGO_URL}
+          />
         </MediaQuery>
         <MediaQuery orientation="landscape" maxDeviceHeight={767}>
-          <img id="bitfaced-logo-img" style={logoStylesLandscape} alt="BitFaced Podcast Logo with Eric and Tyler" src="http://koboldcon.com/images/logo.png" />
+          <img
+            id="bitfaced-logo-img"
+            style={logoStylesLandscape}
+            alt="BitFaced Podcast Logo with Eric and Tyler"
+            src={HomeContent.LOGO_URL}
+          />
         </MediaQuery>
         <MediaQuery orientation="landscape" minDeviceHeight={768}>
-          <img id="bitfaced-logo-img" style={logoStylesBigLandscape} alt="BitFaced Podcast Logo with Eric and Tyler" src="http://koboldcon.com/images/logo.png" />
+          <img
+            id="bitfaced-logo-img"
+            style={logoStylesBigLandscape}
+            alt="BitFaced Podcast Logo with Eric and Tyler"
+            src={HomeContent.LOGO_URL}
+          />
         </MediaQuery>
       </div>
     );
