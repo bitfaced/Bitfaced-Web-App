@@ -4,7 +4,11 @@ The BitFaced Podcast Web Application built using React, Next.js, and Evergreen-U
 ## Prerequisites
 
 1. Node and NPM (Learn more about Node and NPM)
+  - Install for MacOSX
+  - Install for Windows
 2. git (Learn more about git)
+  - Install git
+  - Helpful git command guides
 
 ## Setting Up Workspace
 
