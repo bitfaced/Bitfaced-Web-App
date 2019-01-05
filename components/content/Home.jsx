@@ -49,7 +49,7 @@ class HomeContent extends React.Component {
             src={HomeContent.LOGO_URL}
           />
         </MediaQuery>
-        <MediaQuery orientation="landscape" maxDeviceHeight={767}>
+        <MediaQuery orientation="landscape" maxDeviceWidth={840}>
           <img
             id="bitfaced-logo-img"
             style={logoStylesLandscape}
@@ -57,7 +57,7 @@ class HomeContent extends React.Component {
             src={HomeContent.LOGO_URL}
           />
         </MediaQuery>
-        <MediaQuery orientation="landscape" minDeviceHeight={768}>
+        <MediaQuery orientation="landscape" minDeviceWidth={841}>
           <img
             id="bitfaced-logo-img"
             style={logoStylesBigLandscape}
