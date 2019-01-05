@@ -1,5 +1,6 @@
 # BitFaced-Web-App
 The BitFaced Podcast Web Application built using React, Next.js, and Evergreen-UI.
+http://ec2-52-14-244-30.us-east-2.compute.amazonaws.com/
  
 ## Prerequisites
 
