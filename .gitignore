@@ -20,6 +20,8 @@
 *.tar
 *.zip
 node_modules/
+.next/
+.vscode
 
 # Logs and databases #
 ######################
