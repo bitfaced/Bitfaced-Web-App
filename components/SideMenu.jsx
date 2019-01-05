@@ -5,40 +5,81 @@ import {
   Position,
   IconButton,
 } from 'evergreen-ui';
+import { PropTypes } from 'prop-types';
+import { CONTENT_NODES, noop } from '../constants';
 
 class SideMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+    propTypes = {
+      onContentChange: PropTypes.func.isRequired,
+    }
+
+    constructor(props) {
+      super(props);
+      this.state = {
+        isOpened: false,
+        menuItems: this.menuItems(),
+      };
+    }
+
+  onMenuItemClick = (e) => {
+    const { onContentChange } = this.props;
+
+    onContentChange(e.target.title);
+    this.setState({
       isOpened: false,
-    };
+    });
   }
 
-    toggleSideMenuOpen = () => {
-      this.setState = prevState => ({ isOpened: !prevState.isOpened });
-    };
+  menuItems = () => Object.keys(CONTENT_NODES).map(
+    content => (
+      <Paragraph
+        onClick={this.onMenuItemClick}
+        margin={10}
+        title={content}
+      >
+        {CONTENT_NODES[content].displayName}
+      </Paragraph>
+    ),
+  );
 
-    render() {
-      const { isOpened } = this.state;
+  getNextToggleStatus = () => {
+    const { isOpened } = this.state;
 
-      return (
-        <React.Fragment>
-          <SideSheet
-            position={Position.TOP}
-            isShown={isOpened}
-            onCloseComplete={this.toggleSideMenuOpen}
-          >
-            <Paragraph margin={10}>Home</Paragraph>
-            <Paragraph margin={10}>About Bitfaced</Paragraph>
-            <Paragraph margin={10}>Contact Bitfaced</Paragraph>
-          </SideSheet>
-          <IconButton
-            icon="menu"
-            onClick={this.toggleSideMenuOpen}
-          />
-        </React.Fragment>
-      );
-    }
+    return !isOpened;
+  }
+
+  toggleSideMenu = () => {
+    const newStatus = this.getNextToggleStatus();
+
+    this.setState({
+      isOpened: newStatus,
+    });
+  };
+
+  render() {
+    const {
+      isOpened,
+      menuItems,
+    } = this.state;
+
+    const onCloseComplete = isOpened === false ? noop : this.toggleSideMenu;
+
+    return (
+      <React.Fragment>
+        <SideSheet
+          position={Position.TOP}
+          isShown={isOpened}
+          onCloseComplete={onCloseComplete}
+        >
+          {menuItems}
+        </SideSheet>
+        <IconButton
+          icon="menu"
+          onClick={this.toggleSideMenu}
+        />
+      </React.Fragment>
+    );
+  }
 }
 
 export default SideMenu;

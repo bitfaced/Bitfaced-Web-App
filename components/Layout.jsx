@@ -11,9 +11,11 @@ const layoutStyle = {
   width: '100%',
 };
 
-const Layout = ({ children }) => (
+const Layout = ({ onContentChange, children }) => (
   <div style={layoutStyle}>
-    <Header />
+    <Header
+      onContentChange={onContentChange}
+    />
     {children}
     <Footer />
   </div>
@@ -21,6 +23,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node,
+  onContentChange: PropTypes.func.isRequired,
 };
 
 Layout.defaultProps = {
