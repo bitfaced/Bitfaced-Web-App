@@ -29,6 +29,7 @@ class HomeContent extends React.Component {
     this.state = {};
   }
 
+
   render() {
     return (
       <div>
