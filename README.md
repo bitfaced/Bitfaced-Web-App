@@ -29,7 +29,7 @@ Install pm2 globally for testing prod like builds (might require sudo)
 `npm run dev`
 
 Now visit:
-https://localhost:3000
+http://localhost:3000
 
 You are successfully running the application.
 
