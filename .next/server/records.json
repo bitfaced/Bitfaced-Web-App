@@ -1,0 +1,69 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "external \"react\"": 0,
+      "external \"evergreen-ui\"": 1,
+      "external \"prop-types\"": 2,
+      "external \"react-responsive\"": 3,
+      "external \"styled-jsx/style\"": 4,
+      "external \"next/head\"": 5,
+      "multi ./pages/index.jsx": 6,
+      "multi node_modules/next/dist/pages/_app.js": 7,
+      "node_modules/next/dist/pages/_app.js": 8,
+      "external \"next/app\"": 9,
+      "multi node_modules/next/dist/pages/_error.js": 10,
+      "node_modules/next/dist/pages/_error.js": 11,
+      "external \"next/error\"": 12,
+      "multi node_modules/next/dist/pages/_document.js": 13,
+      "node_modules/next/dist/pages/_document.js": 14,
+      "external \"next/document\"": 15,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.jsx 818762fcb0c2c9324a0bd1476125cf0b": 16
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static/B9erV~QuIM_I8v359HQDT/pages/index.js": 0,
+      "static/B9erV~QuIM_I8v359HQDT/pages/_app.js": 1,
+      "static/B9erV~QuIM_I8v359HQDT/pages/_error.js": 2,
+      "static/B9erV~QuIM_I8v359HQDT/pages/_document.js": 3,
+      "static/RCQ5zznXMK5hKZQh5J2XM/pages/index.js": 4,
+      "static/RCQ5zznXMK5hKZQh5J2XM/pages/_app.js": 5,
+      "static/RCQ5zznXMK5hKZQh5J2XM/pages/_error.js": 6,
+      "static/RCQ5zznXMK5hKZQh5J2XM/pages/_document.js": 7,
+      "static/hkUql5y7n8f5Vh452reNL/pages/index.js": 0,
+      "static/hkUql5y7n8f5Vh452reNL/pages/_app.js": 1,
+      "static/hkUql5y7n8f5Vh452reNL/pages/_error.js": 2,
+      "static/hkUql5y7n8f5Vh452reNL/pages/_document.js": 3,
+      "static/PV7fSkGuu8Xl7Prdsg4YP/pages/index.js": 4,
+      "static/PV7fSkGuu8Xl7Prdsg4YP/pages/_app.js": 5,
+      "static/PV7fSkGuu8Xl7Prdsg4YP/pages/_error.js": 6,
+      "static/PV7fSkGuu8Xl7Prdsg4YP/pages/_document.js": 7
+    },
+    "bySource": {},
+    "usedIds": [
+      4,
+      5,
+      6,
+      7
+    ]
+  }
+}
