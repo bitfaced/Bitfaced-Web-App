@@ -37,9 +37,12 @@ class ContactContent extends React.Component {
           confirmLabel="Back to Home"
         >
           <div>
-            <iframe title="fb-page" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbitfacedgames%2F&tabs=messages&width=311&height=500&small_header=true&adapt_container_width=false&hide_cover=false&show_facepile=true&appId=1629881623992316" width="311" height="500" scrolling="no" allowTransparency="true" allow="encrypted-media" />
+            <li>Facebook Page</li>
+            <li>Facebook Group</li>
+            <li>Itunes Podcast Page</li>
+            <li>Youtube Page</li>
+            <li>Twitch Page</li>
           </div>
-
         </Dialog>
       </div>
     );

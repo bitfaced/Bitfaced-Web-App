@@ -1,5 +1,11 @@
 import React from 'react';
-import { Dialog, Avatar, Text } from 'evergreen-ui';
+import {
+  Dialog,
+  Avatar,
+  Pane,
+  Paragraph,
+  Heading,
+} from 'evergreen-ui';
 import { PropTypes } from 'prop-types';
 import { DEFAULT_CONTENT_NODE } from '../../constants';
 
@@ -36,56 +42,85 @@ class AboutContent extends React.Component {
           onCloseComplete={this.onClose}
           confirmLabel="Back to Home"
         >
-          <div>
-            <Avatar isSolid color="green" name="Bit Faced" size={60} />
-            <Text size={700}>
-            BitFaced
-            </Text>
-            <p>
-              jfajhjkdahfjdshkfh
-              adsffdsffdsfdsafdasfdsafasdf
-              dsafafsdasfadsfasdfsadfdasfdasf
-              adsfasfadsfadsfsdafdsaf
-            </p>
-            <p>
-              jfajhjkdahfjdshkfh
-              adsffdsffdsfdsafdasfdsafasdf
-              dsafafsdasfadsfasdfsadfdasfdasf
-              adsfasfadsfadsfsdafdsaf
-            </p>
-          </div>
+          <Pane
+            minHeight={120}
+            width="100%"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            border="default"
+            elevation={2}
+            padding={8}
+            marginBottom={8}
+          >
+            <Avatar isSolid color="purple" name="Bit Faced" size={60} />
+            <Paragraph size={500} padding={4}>
+              <Heading is="h3">Bitfaced</Heading>
+              Test Test TEst ehwjj wqejjhe jweqhfqjkwe qwjehjqe jewfh
+              qwbfhqwhjfbjhefbqhjb hgfehqg qhefhjqwfhg qhwegfhfqgw fqef
+              qwehjqwejjhqkjhjehjhqjhwfhejhjfhqjhf hfewhjqejkhewqjhjqhwfe
+            </Paragraph>
+          </Pane>
 
-          <div>
-            <Avatar name="Eric Hollis" size={60} />
-            <Text size={700}>
-            Eric G. Hollis
-            </Text>
-            <p>
-              jfajhjkdahfjdshkfh
-              adsffdsffdsfdsafdasfdsafasdf
-              dsafafsdasfadsfasdfsadfdasfdasf
-              adsfasfadsfadsfsdafdsaf
-            </p>
-            <p>
-              jfajhjkdahfjdshkfh
-              adsffdsffdsfdsafdasfdsafasdf
-              dsafafsdasfadsfasdfsadfdasfdasf
-              adsfasfadsfadsfsdafdsaf
-            </p>
-          </div>
+          <Pane
+            minHeight={120}
+            width="100%"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            border="default"
+            elevation={2}
+            padding={8}
+            marginBottom={8}
+          >
+            <Avatar isSolid name="Eric Hollis" size={60} />
+            <Paragraph size={500} padding={4}>
+              <Heading is="h3">Eric G. Hollis</Heading>
+              Test Test TEst ehwjj wqejjhe jweqhfqjkwe qwjehjqe jewfh
+              qwbfhqwhjfbjhefbqhjb hgfehqg qhefhjqwfhg qhwegfhfqgw fqef
+              qwehjqwejjhqkjhjehjhqjhwfhejhjfhqjhf hfewhjqejkhewqjhjqhwfe
+            </Paragraph>
+          </Pane>
 
-          <div>
-            <Avatar name="Tyler Glaze" size={60} />
-            <Text size={700}>
-            Tyler Glaze
-            </Text>
-            <p>
-              jfajhjkdahfjdshkfh
-              adsffdsffdsfdsafdasfdsafasdf
-              dsafafsdasfadsfasdfsadfdasfdasf
-              adsfasfadsfadsfsdafdsaf
-            </p>
-          </div>
+          <Pane
+            minHeight={120}
+            width="100%"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            border="default"
+            elevation={2}
+            padding={8}
+            marginBottom={8}
+          >
+            <Avatar isSolid name="Tyler Glaze" size={60} />
+            <Paragraph size={500} padding={4}>
+              <Heading is="h3">Tyler R. Glaze</Heading>
+              Test Test TEst ehwjj wqejjhe jweqhfqjkwe qwjehjqe jewfh
+              qwbfhqwhjfbjhefbqhjb hgfehqg qhefhjqwfhg qhwegfhfqgw fqef
+              qwehjqwejjhqkjhjehjhqjhwfhejhjfhqjhf hfewhjqejkhewqjhjqhwfe
+            </Paragraph>
+          </Pane>
+
+          <Pane
+            minHeight={120}
+            width="100%"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            border="default"
+            elevation={2}
+            padding={8}
+            marginBottom={8}
+          >
+            <Avatar isSolid color="yellow" name="Rebecca Somthing" size={60} />
+            <Paragraph size={500} padding={4}>
+              <Heading is="h3">Rebecca Something</Heading>
+              Test Test TEst ehwjj wqejjhe jweqhfqjkwe qwjehjqe jewfh
+              qwbfhqwhjfbjhefbqhjb hgfehqg qhefhjqwfhg qhwegfhfqgw fqef
+              qwehjqwejjhqkjhjehjhqjhwfhejhjfhqjhf hfewhjqejkhewqjhjqhwfe
+            </Paragraph>
+          </Pane>
 
         </Dialog>
       </div>
