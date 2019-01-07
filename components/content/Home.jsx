@@ -15,8 +15,8 @@ const logoStylesLandscape = {
 };
 
 const logoStylesBigLandscape = {
-  width: '60%',
-  marginLeft: '20%',
+  width: '40%',
+  marginLeft: '30%',
   position: 'absolute',
   bottom: '215px',
 };
