@@ -44,8 +44,7 @@ class HomeContent extends React.Component {
     this.state = {};
   }
 
-  onlogoClick = (e) => {
-    console.log(e);
+  onlogoClick = () => {
     const { onContentChange } = this.props;
 
     onContentChange('pacman');

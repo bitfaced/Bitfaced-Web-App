@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import Header from './Header';
 import Footer from './Footer';
+import Toast from './Toast';
 
 const layoutStyle = {
   margin: 0,
@@ -16,6 +17,7 @@ const Layout = ({ onContentChange, children }) => (
     <Header
       onContentChange={onContentChange}
     />
+    <Toast style={{ padding: 8, zIndex: 10 }} />
     {children}
     <Footer />
   </div>
