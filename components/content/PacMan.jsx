@@ -35,6 +35,7 @@ class PacManContent extends React.Component {
         width="100%"
         minHeightContent="400px"
         onCloseComplete={this.onClose}
+        onCancel={this.onClose}
       >
         <iframe width="100%" style={PacManContent.iframeStyles} title="Bitfaced Pacman Game" src="http://ec2-18-220-163-76.us-east-2.compute.amazonaws.com/index.html" />
       </Dialog>
