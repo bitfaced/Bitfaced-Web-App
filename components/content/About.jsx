@@ -1,13 +1,10 @@
 import React from 'react';
 import {
   Dialog,
-  Avatar,
-  Pane,
-  Paragraph,
-  Heading,
 } from 'evergreen-ui';
 import { PropTypes } from 'prop-types';
 import { DEFAULT_CONTENT_NODE } from '../../constants';
+import AboutPane from './AboutPane';
 
 const aboutContainerStyles = {
   width: '80%',
@@ -20,6 +17,59 @@ class AboutContent extends React.Component {
   static propTypes = {
     onContentChange: PropTypes.func.isRequired,
   }
+
+  static aboutData = [
+    {
+      id: 1,
+      displayName: 'Bitfaced',
+      avatarName: 'Bit Faced',
+      color: 'green',
+      content: `
+        test text mdsfbbaf hdbsabhfhfjbabff afsdfdasfa sfdsfadsfas fdsaffdfasdfdas fasdfsafdsa fdsafad
+        test text mdsfbbaf hdbsabhfhfjbabff afsdfdasf asfdsfadsfas fdsaffdfasdfdas fasdfsafdsa fdsafad
+      `,
+    },
+    {
+      id: 2,
+      displayName: 'Eric G. Hollis',
+      avatarName: 'Eric Hollis',
+      color: 'red',
+      content: `
+        test text mdsfbbafhdbsab hfhfjbabff fasfsfasdj hfjashfjdsah
+        fhjkdkjfljashjfh afsdfdasfasfdsfads fasfdsaff dfasdfdas fasdfsafdsafdsafad
+      `,
+    },
+    {
+      id: 3,
+      displayName: 'Tyler R. Glaze',
+      avatarName: 'Tyler Glaze',
+      color: 'yellow',
+      content: `
+        test text mdsfbba fhdbsabhfhfjbabff fasfsfasdjhfjashfj dsahfhjkdkjfljashjfh
+        afsdfdasfasfdsfadsfasfdsaffd fasdfdas fasdfsafdsafdsafad
+      `,
+    },
+    {
+      id: 4,
+      displayName: 'Rebecca Cap4Kidz',
+      avatarName: 'Rebecca Cap4Kidz',
+      color: 'blue',
+      content: `
+        test text mdsfbbafhdb sabhfhfjbabff fasfsfasdjhfjashfjdsahfh jkdkjfljashjfh
+        afsdfdasfasfdsfa dsfasf dsaffdfasdfdas fasdfsafdsafdsafad
+      `,
+    },
+  ];
+
+  static aboutContent = AboutContent.aboutData.map(contentNode => (
+    <AboutPane
+      displayName={contentNode.displayName}
+      avatarName={contentNode.avatarName}
+      color={contentNode.color}
+      content={contentNode.content}
+      key={contentNode.id}
+    />
+  ));
 
   constructor(props) {
     super(props);
@@ -42,86 +92,7 @@ class AboutContent extends React.Component {
           onCloseComplete={this.onClose}
           confirmLabel="Back to Home"
         >
-          <Pane
-            minHeight={120}
-            width="100%"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            border="default"
-            elevation={2}
-            padding={8}
-            marginBottom={8}
-          >
-            <Avatar isSolid color="purple" name="Bit Faced" size={60} />
-            <Paragraph size={500} padding={4}>
-              <Heading is="h3">Bitfaced</Heading>
-              Test Test TEst ehwjj wqejjhe jweqhfqjkwe qwjehjqe jewfh
-              qwbfhqwhjfbjhefbqhjb hgfehqg qhefhjqwfhg qhwegfhfqgw fqef
-              qwehjqwejjhqkjhjehjhqjhwfhejhjfhqjhf hfewhjqejkhewqjhjqhwfe
-            </Paragraph>
-          </Pane>
-
-          <Pane
-            minHeight={120}
-            width="100%"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            border="default"
-            elevation={2}
-            padding={8}
-            marginBottom={8}
-          >
-            <Avatar isSolid name="Eric Hollis" size={60} />
-            <Paragraph size={500} padding={4}>
-              <Heading is="h3">Eric G. Hollis</Heading>
-              Test Test TEst ehwjj wqejjhe jweqhfqjkwe qwjehjqe jewfh
-              qwbfhqwhjfbjhefbqhjb hgfehqg qhefhjqwfhg qhwegfhfqgw fqef
-              qwehjqwejjhqkjhjehjhqjhwfhejhjfhqjhf hfewhjqejkhewqjhjqhwfe
-            </Paragraph>
-          </Pane>
-
-          <Pane
-            minHeight={120}
-            width="100%"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            border="default"
-            elevation={2}
-            padding={8}
-            marginBottom={8}
-          >
-            <Avatar isSolid name="Tyler Glaze" size={60} />
-            <Paragraph size={500} padding={4}>
-              <Heading is="h3">Tyler R. Glaze</Heading>
-              Test Test TEst ehwjj wqejjhe jweqhfqjkwe qwjehjqe jewfh
-              qwbfhqwhjfbjhefbqhjb hgfehqg qhefhjqwfhg qhwegfhfqgw fqef
-              qwehjqwejjhqkjhjehjhqjhwfhejhjfhqjhf hfewhjqejkhewqjhjqhwfe
-            </Paragraph>
-          </Pane>
-
-          <Pane
-            minHeight={120}
-            width="100%"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            border="default"
-            elevation={2}
-            padding={8}
-            marginBottom={8}
-          >
-            <Avatar isSolid color="yellow" name="Rebecca Somthing" size={60} />
-            <Paragraph size={500} padding={4}>
-              <Heading is="h3">Rebecca Something</Heading>
-              Test Test TEst ehwjj wqejjhe jweqhfqjkwe qwjehjqe jewfh
-              qwbfhqwhjfbjhefbqhjb hgfehqg qhefhjqwfhg qhwegfhfqgw fqef
-              qwehjqwejjhqkjhjehjhqjhwfhejhjfhqjhf hfewhjqejkhewqjhjqhwfe
-            </Paragraph>
-          </Pane>
-
+          {AboutContent.aboutContent}
         </Dialog>
       </div>
     );
