@@ -1,5 +1,9 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import MediaQuery from 'react-responsive';
+import { PropTypes } from 'prop-types';
 
 const logoStylesPortrait = {
   width: '100%',
@@ -29,11 +33,22 @@ const logoStylesBigLandscape = {
 };
 
 class HomeContent extends React.Component {
+  static propTypes = {
+    onContentChange: PropTypes.func.isRequired,
+  }
+
   static LOGO_URL = 'https://s3.us-east-2.amazonaws.com/bitfaced/logo.png';
 
   constructor(props) {
     super(props);
     this.state = {};
+  }
+
+  onlogoClick = (e) => {
+    console.log(e);
+    const { onContentChange } = this.props;
+
+    onContentChange('pacman');
   }
 
 
@@ -46,6 +61,7 @@ class HomeContent extends React.Component {
             style={logoStylesPortrait}
             alt="BitFaced Podcast Logo with Eric and Tyler"
             src={HomeContent.LOGO_URL}
+            onClick={this.onlogoClick}
           />
         </MediaQuery>
         <MediaQuery orientation="portrait" maxDeviceWidth={501}>
@@ -54,6 +70,7 @@ class HomeContent extends React.Component {
             style={logoStylesSmallPortrait}
             alt="BitFaced Podcast Logo with Eric and Tyler"
             src={HomeContent.LOGO_URL}
+            onClick={this.onlogoClick}
           />
         </MediaQuery>
         <MediaQuery orientation="landscape" maxDeviceHeight={840} maxDeviceWidth={840}>
@@ -62,6 +79,7 @@ class HomeContent extends React.Component {
             style={logoStylesLandscape}
             alt="BitFaced Podcast Logo with Eric and Tyler"
             src={HomeContent.LOGO_URL}
+            onClick={this.onlogoClick}
           />
         </MediaQuery>
         <MediaQuery orientation="landscape" minDeviceWidth={841}>
@@ -70,6 +88,7 @@ class HomeContent extends React.Component {
             style={logoStylesBigLandscape}
             alt="BitFaced Podcast Logo with Eric and Tyler"
             src={HomeContent.LOGO_URL}
+            onClick={this.onlogoClick}
           />
         </MediaQuery>
       </div>

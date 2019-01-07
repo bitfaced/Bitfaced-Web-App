@@ -2,12 +2,15 @@ import React from 'react';
 import HomeContent from './components/content/Home';
 import AboutContent from './components/content/About';
 import ContactContent from './components/content/Contact';
+import PacManContent from './components/content/PacMan';
 
 export const CONTENT_NODES = {
   home: {
     displayName: 'Home',
-    component: () => (
-      <HomeContent />
+    component: onContentChange => (
+      <HomeContent
+        onContentChange={onContentChange}
+      />
     ),
   },
   about: {
@@ -22,6 +25,14 @@ export const CONTENT_NODES = {
     displayName: 'Contact Bitfaced',
     component: onContentChange => (
       <ContactContent
+        onContentChange={onContentChange}
+      />
+    ),
+  },
+  pacman: {
+    displayName: '',
+    component: onContentChange => (
+      <PacManContent
         onContentChange={onContentChange}
       />
     ),
