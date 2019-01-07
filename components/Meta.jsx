@@ -27,7 +27,7 @@ export default () => (
       }
 
       body {
-        background: url(https://i.pinimg.com/originals/37/63/61/37636169a277903f0ef4a794202a08c7.gif);
+        background: url(https://www.desktopbackground.org/p/2012/02/17/345632_8-bit-mario-wallpapers-wallpapers-cave_1024x640_h.png);
         background-size: cover;
         background-position-y: -180px;
       }

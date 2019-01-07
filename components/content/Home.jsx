@@ -7,6 +7,13 @@ const logoStylesPortrait = {
   bottom: '210px',
 };
 
+const logoStylesSmallPortrait = {
+  width: '80%',
+  marginLeft: '10%',
+  position: 'absolute',
+  bottom: '210px',
+};
+
 const logoStylesLandscape = {
   width: '20%',
   marginLeft: '40%',
@@ -44,12 +51,12 @@ class HomeContent extends React.Component {
         <MediaQuery orientation="portrait" maxDeviceWidth={501}>
           <img
             id="bitfaced-logo-img"
-            style={logoStylesBigLandscape}
+            style={logoStylesSmallPortrait}
             alt="BitFaced Podcast Logo with Eric and Tyler"
             src={HomeContent.LOGO_URL}
           />
         </MediaQuery>
-        <MediaQuery orientation="landscape" maxDeviceWidth={840}>
+        <MediaQuery orientation="landscape" maxDeviceHeight={840} maxDeviceWidth={840}>
           <img
             id="bitfaced-logo-img"
             style={logoStylesLandscape}
