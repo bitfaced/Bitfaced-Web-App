@@ -17,7 +17,7 @@ const Layout = ({ onContentChange, children }) => (
     <Header
       onContentChange={onContentChange}
     />
-    <Toast style={{ padding: 8, zIndex: 10 }} />
+    <Toast style={{ padding: 8, zIndex: 19 }} />
     {children}
     <Footer />
   </div>

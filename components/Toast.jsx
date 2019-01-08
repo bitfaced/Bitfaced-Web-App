@@ -34,6 +34,7 @@ const closeAnimation = css.keyframes('closeAnimation', {
 
 const animationStyles = css({
   display: 'flex',
+  position: 'relative',
   flexDirection: 'column',
   alignItems: 'center',
   height: 0,
@@ -56,7 +57,7 @@ export default class Toast extends React.Component {
       isShown: true,
       height: 0,
       duration: 1000,
-      zIndex: 10,
+      zIndex: 19,
     };
   }
 
@@ -135,11 +136,10 @@ export default class Toast extends React.Component {
               height,
               zIndex,
               marginBottom: isShown ? 0 : -height,
-              marginTop: '-55px',
-              position: 'relative',
+              marginLeft: '50px',
+              position: 'absolute',
               width: 'calc(100% - 100px)',
-              marginLeft: 'auto',
-              marginRight: 'auto',
+              top: '7px',
             }}
           >
             <div ref={this.onRef} style={{ padding: 8, zIndex: 10 }}>
@@ -150,7 +150,8 @@ export default class Toast extends React.Component {
                 intent="none"
                 title="Welcome to Bitfaced.com"
                 pointerEvents="all"
-                zIndex={10}
+                zIndex={19}
+                position="relative"
                 width="100%"
                 marginLeft="auto"
                 marginRight="auto"
