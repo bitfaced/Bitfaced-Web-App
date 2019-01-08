@@ -5,6 +5,7 @@ export default () => (
   <div>
     <Head>
       <title>Bitfaced - Pop Culture and Gaming Podcast</title>
+      <meta httpEquiv="Content-Language" content="en" />
       <meta name="og:type" content="website" />
       <meta name="og:url" content="http://bitfaced.com" />
       <meta name="og:title" content="BitFaced Podcast" />
