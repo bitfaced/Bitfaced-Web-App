@@ -4,16 +4,18 @@
   "description": "Responsive React website using evergreen-ui and a Pippa Media Player Embed to create a simple and smooth BitFaced website UX.",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start -p 80",
-    "pm2": "pm2 start npm -- start"
+    "pm2": "NODE_ENV=production pm2 start server.js"
   },
   "keywords": [],
   "author": "Phillip Dean",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.3",
     "evergreen-ui": "^4.8.0",
+    "express": "^4.16.4",
     "glamor": "^2.20.40",
     "install": "^0.12.2",
     "next": "^7.0.2",

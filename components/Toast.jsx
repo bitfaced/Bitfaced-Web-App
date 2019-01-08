@@ -55,7 +55,7 @@ export default class Toast extends React.Component {
     this.state = {
       isShown: true,
       height: 0,
-      duration: 120,
+      duration: 1000,
       zIndex: 10,
     };
   }
