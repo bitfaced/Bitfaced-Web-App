@@ -135,7 +135,11 @@ export default class Toast extends React.Component {
               height,
               zIndex,
               marginBottom: isShown ? 0 : -height,
+              marginTop: '-55px',
               position: 'relative',
+              width: 'calc(100% - 100px)',
+              marginLeft: 'auto',
+              marginRight: 'auto',
             }}
           >
             <div ref={this.onRef} style={{ padding: 8, zIndex: 10 }}>
@@ -147,7 +151,7 @@ export default class Toast extends React.Component {
                 title="Welcome to Bitfaced.com"
                 pointerEvents="all"
                 zIndex={10}
-                width="calc(100% - 30px)"
+                width="100%"
                 marginLeft="auto"
                 marginRight="auto"
                 hasIcon={false}
