@@ -27,7 +27,7 @@ export default () => (
       }
 
       body {
-        background: url(https://s3.us-east-2.amazonaws.com/bfpc/345632_8-bit-mario-wallpapers-wallpapers-cave_1024x640_h.png);
+        background: url(https://s3.us-east-2.amazonaws.com/bfpc/345632_8-bit-mario-wallpapers-wallpapers-cave_1024x640_h.webp);
         background-size: cover;
         background-position-y: -180px;
       }
