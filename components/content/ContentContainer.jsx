@@ -22,7 +22,8 @@ class ContentContainer extends React.Component {
 
   getContent = (contentKey) => {
     const { onContentChange } = this.props;
-    return CONTENT_NODES[contentKey].component(onContentChange);
+    return CONTENT_NODES[contentKey] ? CONTENT_NODES[contentKey].component(onContentChange)
+      : CONTENT_NODES.home.component(onContentChange);
   }
 
   render() {
