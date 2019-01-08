@@ -155,7 +155,7 @@ export default class Toast extends React.Component {
                 onRemove={this.onRemove}
               >
                 Please check out the latest podcast, find us on social media,
-                and feel free to click around. You never know what kind of fun you might find.
+                and try poking at our hearts, you might make a game of it...
               </Alert>
             </div>
           </div>

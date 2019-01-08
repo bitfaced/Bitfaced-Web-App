@@ -13,25 +13,45 @@ const aboutContainerStyles = {
   borderRadis: '3px',
 };
 
-class AboutContent extends React.Component {
+class TeamContent extends React.Component {
   static propTypes = {
     onContentChange: PropTypes.func.isRequired,
   }
 
   static aboutData = [
     {
-      id: 1,
-      displayName: 'Bitfaced',
-      avatarName: 'Bit Faced',
-      color: 'green',
+      id: 2,
+      displayName: 'Eric G. Hollis',
+      avatarName: 'Eric Hollis',
+      color: 'red',
       content: `
-        test text mdsfbbaf hdbsabhfhfjbabff afsdfdasfa sfdsfadsfas fdsaffdfasdfdas fasdfsafdsa fdsafad
-        test text mdsfbbaf hdbsabhfhfjbabff afsdfdasf asfdsfadsfas fdsaffdfasdfdas fasdfsafdsa fdsafad
+        test text mdsfbbafhdbsab hfhfjbabff fasfsfasdj hfjashfjdsah
+        fhjkdkjfljashjfh afsdfdasfasfdsfads fasfdsaff dfasdfdas fasdfsafdsafdsafad
+      `,
+    },
+    {
+      id: 3,
+      displayName: 'Tyler R. Glaze',
+      avatarName: 'Tyler Glaze',
+      color: 'yellow',
+      content: `
+        test text mdsfbba fhdbsabhfhfjbabff fasfsfasdjhfjashfj dsahfhjkdkjfljashjfh
+        afsdfdasfasfdsfadsfasfdsaffd fasdfdas fasdfsafdsafdsafad
+      `,
+    },
+    {
+      id: 4,
+      displayName: 'Rebecca Cap4Kidz',
+      avatarName: 'Rebecca Cap4Kidz',
+      color: 'blue',
+      content: `
+        test text mdsfbbafhdb sabhfhfjbabff fasfsfasdjhfjashfjdsahfh jkdkjfljashjfh
+        afsdfdasfasfdsfa dsfasf dsaffdfasdfdas fasdfsafdsafdsafad
       `,
     },
   ];
 
-  static aboutContent = AboutContent.aboutData.map(contentNode => (
+  static aboutContent = TeamContent.aboutData.map(contentNode => (
     <AboutPane
       displayName={contentNode.displayName}
       avatarName={contentNode.avatarName}
@@ -58,15 +78,15 @@ class AboutContent extends React.Component {
         <Dialog
           isShown
           hasCancel={false}
-          title="About BitFaced"
+          title="Meet the BitFaced Team"
           onCloseComplete={this.onClose}
           confirmLabel="Back to Home"
         >
-          {AboutContent.aboutContent}
+          {TeamContent.aboutContent}
         </Dialog>
       </div>
     );
   }
 }
 
-export default AboutContent;
+export default TeamContent;

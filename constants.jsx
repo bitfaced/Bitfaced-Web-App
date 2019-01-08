@@ -3,6 +3,8 @@ import HomeContent from './components/content/Home';
 import AboutContent from './components/content/About';
 import ContactContent from './components/content/Contact';
 import PacManContent from './components/content/PacMan';
+import TeamContent from './components/content/Team';
+import SocialContent from './components/content/Social';
 
 export const CONTENT_NODES = {
   home: {
@@ -23,11 +25,29 @@ export const CONTENT_NODES = {
       />
     ),
   },
+  team: {
+    displayName: 'The Bitfaced Team',
+    iconKey: 'people',
+    component: onContentChange => (
+      <TeamContent
+        onContentChange={onContentChange}
+      />
+    ),
+  },
   contact: {
-    displayName: 'Contact Bitfaced',
+    displayName: 'Contact Us',
     iconKey: 'chat',
     component: onContentChange => (
       <ContactContent
+        onContentChange={onContentChange}
+      />
+    ),
+  },
+  social: {
+    displayName: 'Find us on Social Media',
+    iconKey: 'social-media',
+    component: onContentChange => (
+      <SocialContent
         onContentChange={onContentChange}
       />
     ),

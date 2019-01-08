@@ -10,7 +10,7 @@ const aboutContainerStyles = {
   borderRadis: '3px',
 };
 
-class ContactContent extends React.Component {
+class SocialContent extends React.Component {
   static propTypes = {
     onContentChange: PropTypes.func.isRequired,
   }
@@ -32,12 +32,16 @@ class ContactContent extends React.Component {
         <Dialog
           isShown
           hasCancel={false}
-          title="Contact Bitfaced"
+          title="Like, Follow, Chat, Laugh with Us"
           onCloseComplete={this.onClose}
           confirmLabel="Back to Home"
         >
           <div>
-            Contact info with emails, and fb messanger below
+            <li>Facebook Page</li>
+            <li>Facebook Group</li>
+            <li>Itunes Podcast Page</li>
+            <li>Youtube Page</li>
+            <li>Twitch Page</li>
           </div>
         </Dialog>
       </div>
@@ -45,4 +49,4 @@ class ContactContent extends React.Component {
   }
 }
 
-export default ContactContent;
+export default SocialContent;
