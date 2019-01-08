@@ -26,7 +26,7 @@ export default () => (
         overflow: hidden;
         padding: 0px;
         margin: 0px;
-        overscroll-behavior: none;
+        overscroll-behavior: contain;
       }
 
       body {
