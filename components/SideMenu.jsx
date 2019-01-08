@@ -1,9 +1,10 @@
 import React from 'react';
 import {
   SideSheet,
-  Paragraph,
+  Heading,
   Position,
   IconButton,
+  Icon,
 } from 'evergreen-ui';
 import { PropTypes } from 'prop-types';
 import { CONTENT_NODES, noop } from '../constants';
@@ -23,8 +24,9 @@ class SideMenu extends React.Component {
 
   onMenuItemClick = (e) => {
     const { onContentChange } = this.props;
+    const value = e.target.title || e.target.parentNode.parentNode.title;
 
-    onContentChange(e.target.title);
+    onContentChange(value);
     this.setState({
       isOpened: false,
     });
@@ -32,14 +34,22 @@ class SideMenu extends React.Component {
 
   menuItems = () => Object.keys(CONTENT_NODES).map(
     content => (
-      <Paragraph
+      <Heading
+        size={300}
         onClick={this.onMenuItemClick}
         margin={10}
         title={content}
         key={content}
       >
+        <Icon
+          onClick={this.onMenuItemClick}
+          title={content}
+          icon={CONTENT_NODES[content].iconKey}
+          marginRight={4}
+          paddingTop={6}
+        />
         {CONTENT_NODES[content].displayName}
-      </Paragraph>
+      </Heading>
     ),
   );
 

@@ -13,6 +13,7 @@ class PacManContent extends React.Component {
 
   static iframeStyles = {
     height: '-webkit-fill-available',
+    overscrollBehaviorY: 'contain',
   }
 
   constructor(props) {

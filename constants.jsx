@@ -7,6 +7,7 @@ import PacManContent from './components/content/PacMan';
 export const CONTENT_NODES = {
   home: {
     displayName: 'Home',
+    iconKey: 'home',
     component: onContentChange => (
       <HomeContent
         onContentChange={onContentChange}
@@ -15,6 +16,7 @@ export const CONTENT_NODES = {
   },
   about: {
     displayName: 'About Bitfaced',
+    iconKey: 'info-sign',
     component: onContentChange => (
       <AboutContent
         onContentChange={onContentChange}
@@ -23,6 +25,7 @@ export const CONTENT_NODES = {
   },
   contact: {
     displayName: 'Contact Bitfaced',
+    iconKey: 'chat',
     component: onContentChange => (
       <ContactContent
         onContentChange={onContentChange}
@@ -31,6 +34,7 @@ export const CONTENT_NODES = {
   },
   pacman: {
     displayName: '',
+    iconKey: '',
     component: onContentChange => (
       <PacManContent
         onContentChange={onContentChange}

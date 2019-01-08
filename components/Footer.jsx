@@ -15,7 +15,7 @@ const Footer = () => (
       src={PIPPA_EMBED_URL}
       frameBorder="0"
       width="100%"
-      height="218px"
+      height="220px"
       allow="autoplay"
     />
   </div>
