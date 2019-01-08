@@ -13,7 +13,8 @@ class PacManContent extends React.Component {
 
   static iframeStyles = {
     height: '-webkit-fill-available',
-    overscrollBehaviorY: 'contain',
+    overflow: 'auto',
+    overscrollBehavior: 'contain',
   }
 
   constructor(props) {
@@ -37,6 +38,7 @@ class PacManContent extends React.Component {
         minHeightContent="400px"
         onCloseComplete={this.onClose}
         onCancel={this.onClose}
+        style={PacManContent.iframeStyles}
       >
         <iframe width="100%" style={PacManContent.iframeStyles} title="Bitfaced Pacman Game" src="http://ec2-18-220-163-76.us-east-2.compute.amazonaws.com/index.html" />
       </Dialog>
