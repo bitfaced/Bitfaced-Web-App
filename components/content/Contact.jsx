@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dialog } from 'evergreen-ui';
+import { Dialog, Heading } from 'evergreen-ui';
 import { PropTypes } from 'prop-types';
 import { DEFAULT_CONTENT_NODE } from '../../constants';
 
@@ -37,7 +37,14 @@ class ContactContent extends React.Component {
           confirmLabel="Back to Home"
         >
           <div>
-            Contact info with emails, and fb messanger below
+            <Heading size={400}>
+              If you need to contact Bitfaced, please email eric@bitfaced.com.
+            </Heading>
+
+            <Heading size={300} marginTop={40} marginBottom={20}>
+              You can message us on Facebook, as well.
+            </Heading>
+            <iframe title="fb-message" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbitfacedgames%2F&tabs=messages&width=300&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1629881623992316" width="300" height="400" scrolling="no" frameBorder="0" allowTransparency="true" allow="encrypted-media" />
           </div>
         </Dialog>
       </div>

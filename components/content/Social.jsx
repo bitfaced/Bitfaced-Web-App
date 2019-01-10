@@ -1,5 +1,11 @@
 import React from 'react';
-import { Dialog } from 'evergreen-ui';
+import {
+  Dialog,
+  Alert,
+  Pane,
+  Paragraph,
+  Link,
+} from 'evergreen-ui';
 import { PropTypes } from 'prop-types';
 import { DEFAULT_CONTENT_NODE } from '../../constants';
 
@@ -37,11 +43,37 @@ class SocialContent extends React.Component {
           confirmLabel="Back to Home"
         >
           <div>
-            <li>Facebook Page</li>
-            <li>Facebook Group</li>
-            <li>Itunes Podcast Page</li>
-            <li>Youtube Page</li>
-            <li>Twitch Page</li>
+            <Pane>
+              <Alert
+                intent="none"
+                title="Bitfaced on Facebook"
+                marginBottom={12}
+              >
+                <Paragraph>
+                  <Link href="https://facebook.com/bitfacedgames">Facebook Page</Link>
+                </Paragraph>
+
+                <Link href="https://facebook.com/pages/bitfacedgames">Facebook Group</Link>
+              </Alert>
+              <Alert
+                intent="none"
+                title="YouTube"
+                marginBottom={12}
+              />
+              <Alert
+                intent="none"
+                title="Twitch"
+                marginBottom={12}
+              />
+              <Alert
+                intent="none"
+                title="Subcribe to the podcast"
+              >
+  itunes
+  pipaa
+  onemas
+              </Alert>
+            </Pane>
           </div>
         </Dialog>
       </div>
