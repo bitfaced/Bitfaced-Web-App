@@ -5,6 +5,7 @@ import ContactContent from './components/content/Contact';
 import PacManContent from './components/content/PacMan';
 import TeamContent from './components/content/Team';
 import SocialContent from './components/content/Social';
+import DevelopContent from './components/content/Develop';
 
 export const CONTENT_NODES = {
   home: {
@@ -57,6 +58,15 @@ export const CONTENT_NODES = {
     iconKey: '',
     component: onContentChange => (
       <PacManContent
+        onContentChange={onContentChange}
+      />
+    ),
+  },
+  develop: {
+    displayName: 'Help Develop Bitfaced.com',
+    iconKey: 'code',
+    component: onContentChange => (
+      <DevelopContent
         onContentChange={onContentChange}
       />
     ),
