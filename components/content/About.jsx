@@ -25,8 +25,9 @@ class AboutContent extends React.Component {
       avatarName: 'Bit Faced',
       color: 'green',
       content: `
-        test text mdsfbbaf hdbsabhfhfjbabff afsdfdasfa sfdsfadsfas fdsaffdfasdfdas fasdfsafdsa fdsafad
-        test text mdsfbbaf hdbsabhfhfjbabff afsdfdasf asfdsfadsfas fdsaffdfasdfdas fasdfsafdsa fdsafad
+        A pop culture and gaming podcast.  Funny af.
+        Bitfaced is a pop culture and gaming podcast.  Funny af.
+        Bitfaced is a pop culture and gaming podcast.  Funny af.
       `,
     },
   ];

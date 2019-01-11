@@ -159,8 +159,8 @@ export default class Toast extends React.Component {
                 isRemoveable
                 onRemove={this.onRemove}
               >
-                Please check out the latest podcast, find us on social media,
-                and try poking at our hearts, you might make a game of it...
+                Check out the latest podcast, Red Rad Redemption, find us on social media,
+                or try poking at our hearts, you might make a game of it...
               </Alert>
             </div>
           </div>

@@ -113,7 +113,7 @@ class SocialContent extends React.Component {
                     size={40}
                   />
                   <Heading size={400} marginTop={-28} marginBottom={10} marginLeft={45}>
-                    Subcribe and Listen on itunes
+                    Subcribe and Listen on iTunes
                   </Heading>
                 </Link>
               </Alert>
