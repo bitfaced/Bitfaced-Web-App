@@ -78,6 +78,7 @@ export default class Toast extends React.Component {
       height: 0,
       duration: 1000,
       zIndex: 19,
+      playedTitleMessage: false,
     };
   }
 
@@ -148,10 +149,22 @@ export default class Toast extends React.Component {
   }
 
   onTitleClick = () => {
-    if (typeof window !== 'undefined' && window.SpeechSynthesisUtterance) {
-      const string = `Welcome to Bitfaced, my bity bitches! Don't forget to checkout the latest podcast,${this.getTitle()}`;
-      const msg = new window.SpeechSynthesisUtterance(string);
-      window.speechSynthesis.speak(msg);
+    const {
+      playedTitleMessage,
+    } = this.state;
+
+    if (!playedTitleMessage) {
+      if (typeof window !== 'undefined' && window.SpeechSynthesisUtterance) {
+        const string = `Welcome to Bitfaced, my bity bity bitches! Don't forget to checkout the latest podcast,${this.getTitle()}`;
+        const msg = new window.SpeechSynthesisUtterance(string);
+        msg.rate = 0.85;
+        msg.pitch = -1;
+        window.speechSynthesis.speak(msg);
+
+        this.setState({
+          playedTitleMessage: true,
+        });
+      }
     }
   };
 
@@ -195,7 +208,7 @@ export default class Toast extends React.Component {
                 appearance="card"
                 elevation={3}
                 intent="none"
-                title="Welcome to Bitfaced.com  Check out the latest podcast!"
+                title="Check out the latest Bitfaced podcast!"
                 pointerEvents="all"
                 zIndex={19}
                 position="relative"
@@ -209,14 +222,15 @@ export default class Toast extends React.Component {
                 <div
                   onClick={this.onTitleClick}
                   onKeyPress={this.onTitleClick}
+                  onTouchEnd={this.onTitleClick}
                 >
                   <Heading size={200} marginTop={2}>
                     {title}
                   </Heading>
-                  <Heading size={200} marginTop={2} width="105%">
-                    {content}
-                  </Heading>
                 </div>
+                <Heading size={200} marginTop={2} width="105%">
+                  {content}
+                </Heading>
               </Alert>
             </div>
           </div>
