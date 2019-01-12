@@ -156,10 +156,14 @@ export default class Toast extends React.Component {
 
     if (!playedTitleMessage) {
       if (typeof window !== 'undefined' && window.SpeechSynthesisUtterance) {
+        const voices = window.speechSynthesis.getVoices();
+        // eslint-disable-next-line no-unused-vars
+        const voice = voices[17];
         const string = `Welcome to Bitfaced, my bity bity bitches! Don't forget to checkout the latest podcast,${this.getTitle()}`;
         const msg = new window.SpeechSynthesisUtterance(string);
-        msg.rate = 0.85;
-        msg.pitch = -1;
+        msg.voice = voice;
+        // msg.pitch = 0.5;
+        // msg.rate = 0.5;
         window.speechSynthesis.speak(msg);
 
         this.setState({

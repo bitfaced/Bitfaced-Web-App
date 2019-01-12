@@ -52,7 +52,7 @@ class SocialContent extends React.Component {
               >
                 <Link href="https://www.facebook.com/bitfacedgames/" target="_blank">
                   <Avatar
-                    src="https://cdn2.iconfinder.com/data/icons/social-18/512/Facebook-2-512.png"
+                    src="https://s3.us-east-2.amazonaws.com/bfpc/icons/Facebook-2-512.png"
                     color="teal"
                     padding="5px"
                     name="Facebook"
@@ -70,7 +70,7 @@ class SocialContent extends React.Component {
               >
                 <Link href="https://www.youtube.com/channel/UCBPMUNC5-3hcah9hcqueybg" target="_blank">
                   <Avatar
-                    src="https://cdn3.iconfinder.com/data/icons/ultimate-social/150/39_youtube_b-512.png"
+                    src="https://s3.us-east-2.amazonaws.com/bfpc/icons/39_youtube_b-512.png"
                     color="red"
                     padding="5px"
                     name="Youtube"
@@ -88,7 +88,7 @@ class SocialContent extends React.Component {
               >
                 <Link href="https://www.twitch.tv/bitfacedgames" target="_blank">
                   <Avatar
-                    src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c540.png"
+                    src="https://s3.us-east-2.amazonaws.com/bfpc/icons/580b57fcd9996e24bc43c540.png"
                     color="purple"
                     padding="5px"
                     name="Twitch"
@@ -106,7 +106,7 @@ class SocialContent extends React.Component {
               >
                 <Link href="https://itunes.apple.com/us/podcast/bitfaced/id1002954314?mt=2&app=podcast" target="_blank">
                   <Avatar
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/ITunes_logo.svg/1200px-ITunes_logo.svg.png"
+                    src="https://s3.us-east-2.amazonaws.com/bfpc/icons/1200px-ITunes_logo.svg.png"
                     color="blue"
                     padding="5px"
                     name="Twitch"
