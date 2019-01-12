@@ -7,9 +7,13 @@ import Layout from '../components/Layout';
 import ContentContainer from '../components/content/ContentContainer';
 import { DEFAULT_CONTENT_NODE } from '../constants';
 
+const url = process.env.NODE_ENV !== 'production'
+  ? 'http://localhost:3000/api/podcast/latest'
+  : 'http://ec2-52-14-244-30.us-east-2.compute.amazonaws.com/api/podcast/latest';
+
 class Index extends React.Component {
   static async getInitialProps() {
-    const res = await fetch('http://localhost:3000/api/podcast/latest');
+    const res = await fetch(url);
     const data = await res.json();
 
     return {
