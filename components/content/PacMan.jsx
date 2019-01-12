@@ -19,13 +19,17 @@ class PacManContent extends React.Component {
     overscrollBehavior: 'contain',
   }
 
+  static highScoreUrl = process.env.NODE_ENV !== 'production'
+    ? 'http://localhost:3000/api/pacman/highscore'
+    : 'http://ec2-52-14-244-30.us-east-2.compute.amazonaws.com/api/pacman/highscore';
+
   constructor(props) {
     super(props);
     this.state = {};
     this.getHighScores();
   }
 
-  getHighScores = () => fetch('http://localhost:3000/api/pacman/highscore')
+  getHighScores = () => fetch(PacManContent.highScoreUrl)
     .then((response) => {
       if (response.status >= 400) {
         throw new Error('Bad response from server');
