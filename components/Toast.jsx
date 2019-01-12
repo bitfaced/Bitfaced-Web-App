@@ -6,6 +6,7 @@ import Transition from 'react-transition-group/Transition';
 import {
   Alert,
   Heading,
+  Button,
 } from 'evergreen-ui';
 import { PropTypes } from 'prop-types';
 
@@ -219,15 +220,21 @@ export default class Toast extends React.Component {
                 isRemoveable
                 onRemove={this.onRemove}
               >
-                <div
+                <Button
                   onClick={this.onTitleClick}
                   onKeyPress={this.onTitleClick}
                   onTouchEnd={this.onTitleClick}
+                  style={{
+                    backgroundImage: 'none',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    boxShadow: 'none',
+                    padding: '0px',
+                  }}
                 >
                   <Heading size={200} marginTop={2}>
                     {title}
                   </Heading>
-                </div>
+                </Button>
                 <Heading size={200} marginTop={2} width="105%">
                   {content}
                 </Heading>
