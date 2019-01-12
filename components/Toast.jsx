@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import { css } from 'glamor';
 import Transition from 'react-transition-group/Transition';
@@ -110,7 +112,15 @@ export default class Toast extends React.Component {
       latestPodcast,
     } = this.props;
 
-    return (!latestPodcast.title) ? ' ' : ` ${latestPodcast.title.trim()}, `;
+    return (!latestPodcast.title) ? '' : `${latestPodcast.title.trim()}`;
+  };
+
+  getContent = () => {
+    const {
+      latestPodcast,
+    } = this.props;
+
+    return (!latestPodcast.content) ? '' : `${latestPodcast.content}`;
   };
 
   handleMouseEnter = () => {
@@ -137,6 +147,14 @@ export default class Toast extends React.Component {
     });
   }
 
+  onTitleClick = () => {
+    if (typeof window !== 'undefined' && window.SpeechSynthesisUtterance) {
+      const string = `Welcome to Bitfaced, my bity bitches! Don't forget to checkout the latest podcast,${this.getTitle()}`;
+      const msg = new window.SpeechSynthesisUtterance(string);
+      window.speechSynthesis.speak(msg);
+    }
+  };
+
   render() {
     const {
       isShown,
@@ -145,6 +163,7 @@ export default class Toast extends React.Component {
     } = this.state;
 
     const title = this.getTitle();
+    const content = this.getContent();
 
     return (
       <Transition
@@ -176,7 +195,7 @@ export default class Toast extends React.Component {
                 appearance="card"
                 elevation={3}
                 intent="none"
-                title="Welcome to Bitfaced.com"
+                title="Welcome to Bitfaced.com  Check out the latest podcast!"
                 pointerEvents="all"
                 zIndex={19}
                 position="relative"
@@ -187,13 +206,17 @@ export default class Toast extends React.Component {
                 isRemoveable
                 onRemove={this.onRemove}
               >
-                <Heading size={300} marginTop={5}>
-                  Check out the latest podcast,
-                  {title}
-                  and find us on social media while listening,
-                  also try poking at our hearts,
-                  you might make a game of it.
-                </Heading>
+                <div
+                  onClick={this.onTitleClick}
+                  onKeyPress={this.onTitleClick}
+                >
+                  <Heading size={200} marginTop={2}>
+                    {title}
+                  </Heading>
+                  <Heading size={200} marginTop={2} width="105%">
+                    {content}
+                  </Heading>
+                </div>
               </Alert>
             </div>
           </div>
