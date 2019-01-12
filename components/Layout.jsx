@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+
 import Header from './Header';
 import Footer from './Footer';
 import Toast from './Toast';
@@ -12,12 +13,15 @@ const layoutStyle = {
   width: '100%',
 };
 
-const Layout = ({ onContentChange, children }) => (
+const Layout = ({ onContentChange, children, latestPodcast }) => (
   <div style={layoutStyle}>
     <Header
       onContentChange={onContentChange}
     />
-    <Toast style={{ padding: 8, zIndex: 19 }} />
+    <Toast
+      style={{ padding: 8, zIndex: 19 }}
+      latestPodcast={latestPodcast}
+    />
     {children}
     <Footer />
   </div>
@@ -26,10 +30,18 @@ const Layout = ({ onContentChange, children }) => (
 Layout.propTypes = {
   children: PropTypes.node,
   onContentChange: PropTypes.func.isRequired,
+  latestPodcast: PropTypes.shape({
+    title: PropTypes.string,
+    content: PropTypes.string,
+  }),
 };
 
 Layout.defaultProps = {
   children: null,
+  latestPodcast: {
+    title: '',
+    content: '',
+  },
 };
 
 export default Layout;

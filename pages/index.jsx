@@ -1,10 +1,36 @@
 import React from 'react';
 import ReactGA from 'react-ga';
+import fetch from 'isomorphic-unfetch';
+import { PropTypes } from 'prop-types';
+
 import Layout from '../components/Layout';
 import ContentContainer from '../components/content/ContentContainer';
 import { DEFAULT_CONTENT_NODE } from '../constants';
 
 class Index extends React.Component {
+  static async getInitialProps() {
+    const res = await fetch('http://localhost:3000/api/podcast/latest');
+    const data = await res.json();
+
+    return {
+      latestPodcast: data,
+    };
+  }
+
+  static propTypes = {
+    latestPodcast: PropTypes.shape({
+      title: PropTypes.string,
+      content: PropTypes.string,
+    }),
+  };
+
+  static defaultProps = {
+    latestPodcast: {
+      title: '',
+      content: '',
+    },
+  };
+
   constructor(props) {
     super(props);
 
@@ -23,11 +49,18 @@ class Index extends React.Component {
   };
 
   render() {
-    const { activeContent } = this.state;
+    const {
+      activeContent,
+    } = this.state;
+
+    const {
+      latestPodcast,
+    } = this.props;
 
     return (
       <Layout
         onContentChange={this.onContentChange}
+        latestPodcast={latestPodcast}
       >
         <ContentContainer
           activeContent={activeContent}

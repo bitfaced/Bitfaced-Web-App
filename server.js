@@ -2,6 +2,8 @@ const express = require('express');
 const next = require('next');
 const compression = require('compression');
 
+const getRssData = require('./server/api/bfRssToJson');
+
 const dev = process.env.NODE_ENV !== 'production';
 const port = process.env.NODE_ENV !== 'production' ? 3000 : 80;
 const app = next({ dev });
@@ -12,6 +14,14 @@ app.prepare()
     const server = express();
 
     server.use(compression());
+
+    // GET method route
+    server.get('/api/podcast/latest', (req, res) => {
+      getRssData().then((data) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(data));
+      });
+    });
 
     server.get('*', (req, res) => handle(req, res));
 

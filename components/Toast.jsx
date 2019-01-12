@@ -1,7 +1,11 @@
 import React from 'react';
 import { css } from 'glamor';
 import Transition from 'react-transition-group/Transition';
-import { Alert } from 'evergreen-ui';
+import {
+  Alert,
+  Heading,
+} from 'evergreen-ui';
+import { PropTypes } from 'prop-types';
 
 const animationEasing = {
   deceleration: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
@@ -50,6 +54,20 @@ const animationStyles = css({
 });
 
 export default class Toast extends React.Component {
+  static propTypes = {
+    latestPodcast: PropTypes.shape({
+      title: PropTypes.string,
+      content: PropTypes.string,
+    }),
+  }
+
+  static defaultProps = {
+    latestPodcast: {
+      title: '',
+      content: '',
+    },
+  };
+
   constructor(props) {
     super(props);
 
@@ -87,6 +105,14 @@ export default class Toast extends React.Component {
     }
   }
 
+  getTitle = () => {
+    const {
+      latestPodcast,
+    } = this.props;
+
+    return (!latestPodcast.title) ? ' ' : ` ${latestPodcast.title.trim()}, `;
+  };
+
   handleMouseEnter = () => {
     this.clearCloseTimer();
   }
@@ -117,6 +143,8 @@ export default class Toast extends React.Component {
       height,
       zIndex,
     } = this.state;
+
+    const title = this.getTitle();
 
     return (
       <Transition
@@ -159,8 +187,13 @@ export default class Toast extends React.Component {
                 isRemoveable
                 onRemove={this.onRemove}
               >
-                Check out the latest podcast, Red Rad Redemption, find us on social media,
-                or try poking at our hearts, you might make a game of it...
+                <Heading size={300} marginTop={5}>
+                  Check out the latest podcast,
+                  {title}
+                  and find us on social media while listening,
+                  also try poking at our hearts,
+                  you might make a game of it.
+                </Heading>
               </Alert>
             </div>
           </div>
