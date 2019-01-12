@@ -6,14 +6,15 @@ import MediaQuery from 'react-responsive';
 import { PropTypes } from 'prop-types';
 
 const logoStylesPortrait = {
-  width: '100%',
+  width: '70%',
+  marginLeft: '15%',
   position: 'absolute',
   bottom: '210px',
 };
 
 const logoStylesSmallPortrait = {
-  width: '80%',
-  marginLeft: '10%',
+  width: '50%',
+  marginLeft: '25%',
   position: 'absolute',
   bottom: '210px',
 };
@@ -26,8 +27,8 @@ const logoStylesLandscape = {
 };
 
 const logoStylesBigLandscape = {
-  width: '40%',
-  marginLeft: '30%',
+  width: '30%',
+  marginLeft: '35%',
   position: 'absolute',
   bottom: '215px',
 };
