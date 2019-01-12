@@ -3,11 +3,13 @@ const next = require('next');
 const compression = require('compression');
 
 const getRssData = require('./server/api/bfRssToJson');
+const getHighScoreData = require('./server/api/getHighScores');
 
 const dev = process.env.NODE_ENV !== 'production';
 const port = process.env.NODE_ENV !== 'production' ? 3000 : 80;
 const app = next({ dev });
 const handle = app.getRequestHandler();
+
 
 app.prepare()
   .then(() => {
@@ -20,6 +22,13 @@ app.prepare()
       getRssData().then((data) => {
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(data));
+      });
+    });
+
+    server.get('/api/pacman/highscore', (req, res) => {
+      getHighScoreData().then((data) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data);
       });
     });
 
