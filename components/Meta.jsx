@@ -5,6 +5,7 @@ export default () => (
   <div>
     <Head>
       <title>Bitfaced - Pop Culture and Gaming Podcast</title>
+      <link rel="icon" type="image/png" href="https://res.cloudinary.com/pippa/image/fetch/h_32,w_32,f_auto/https://assets.pippa.io/shows/5aa6c68ed19e4ab7501ffd5d/show-cover.jpg" data-react-helmet="true" />
       <meta httpEquiv="Content-Language" content="en" />
       <meta name="og:type" content="website" />
       <meta name="og:url" content="http://bitfaced.com" />
