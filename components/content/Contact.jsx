@@ -44,7 +44,7 @@ class ContactContent extends React.Component {
             <Heading size={300} marginTop={20} marginBottom={20}>
               You can message us on Facebook, as well.
             </Heading>
-            <iframe title="fb-message" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbitfacedgames%2F&tabs=messages&width=300&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1629881623992316" width="300" height="400" scrolling="no" frameBorder="0" allowTransparency="true" allow="encrypted-media" />
+            <iframe title="fb-message" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbitfacedgames%2F&tabs=messages&width=300&height=350&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1629881623992316" width="300" height="350" scrolling="no" frameBorder="0" allowTransparency="true" allow="encrypted-media" />
           </div>
         </Dialog>
       </div>
