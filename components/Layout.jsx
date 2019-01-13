@@ -15,11 +15,12 @@ const layoutStyle = {
 
 const Layout = ({ onContentChange, children, latestPodcast }) => (
   <div style={layoutStyle}>
-    <Header
-      onContentChange={onContentChange}
-    />
     <Toast
       style={{ padding: 8, zIndex: 19 }}
+      latestPodcast={latestPodcast}
+    />
+    <Header
+      onContentChange={onContentChange}
       latestPodcast={latestPodcast}
     />
     {children}
