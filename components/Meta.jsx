@@ -16,7 +16,7 @@ const meta = ({ latestPodcast }) => {
         <meta name="og:type" content="website" />
         <meta name="og:url" content="http://bitfaced.com" />
         <meta name="og:title" content={title} />
-        <meta name="og.image" content="https://s3.us-east-2.amazonaws.com/bitfaced/logo.png" />
+        <meta name="og:image" content="https://s3.us-east-2.amazonaws.com/bitfaced/logo.png" />
         <meta name="msvalidate.01" content="397DC1B89F47E94AE576233E3E3D298B" />
         <meta name="google-site-verification" content="Skr1DY0RuQrohFqXu5sk0WcMzZp-OVC7inox9ihM0ng" />
         <meta name="Description" content={latestPodcast.content} />
