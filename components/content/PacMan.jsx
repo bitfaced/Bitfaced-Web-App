@@ -21,7 +21,7 @@ class PacManContent extends React.Component {
 
   static highScoreUrl = process.env.NODE_ENV !== 'production'
     ? 'http://localhost:3000/api/pacman/highscore'
-    : 'http://bitfaced.com/api/pacman/highscore';
+    : 'https://bitfaced.com/api/pacman/highscore';
 
   constructor(props) {
     super(props);
@@ -78,7 +78,7 @@ class PacManContent extends React.Component {
           },
         }}
       >
-        <iframe width="100%" style={PacManContent.iframeStyles} title="Bitfaced Pacman Game" src="http://ec2-18-220-163-76.us-east-2.compute.amazonaws.com/index.html" />
+        <iframe width="100%" style={PacManContent.iframeStyles} title="Bitfaced Pacman Game" src="https://pacman.bitfaced.com/index.html" />
       </CornerDialog>
     );
   }
