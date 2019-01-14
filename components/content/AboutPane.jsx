@@ -49,7 +49,7 @@ class AboutPane extends React.Component {
         overflow="hidden"
       >
         <Avatar height={40} width={40} isSolid color={color} name={avatarName} size={40} />
-        <Paragraph size={400} padding={8}>
+        <Paragraph size={400} padding={8} width="100%">
           <Text size={500}>{displayName}</Text>
           <br />
           {content}

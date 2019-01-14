@@ -18,16 +18,26 @@ class TeamContent extends React.Component {
     onContentChange: PropTypes.func.isRequired,
   }
 
+  static getEricContent = () => (
+    <div>
+      De facto leader of the Bitfaced crew only because nobody else wanted to do
+      it.  Video game historian, convention host, podcaster, writer, uber-geek,
+      and stand-up comedian are words that he would like to use to describe himself,
+      but whether that rings accurate is completely up to the audience.
+      You can find Eric on Facebook, Twitter, Instagram,
+      and often selling used copies of his memoir
+      <i> This Boys Life Among the Electrical Lights </i>
+      on the side of Dublin boulevard in Colorado Springs.
+    </div>
+  );
+
   static aboutData = [
     {
       id: 2,
       displayName: 'Eric G. Hollis',
       avatarName: 'Eric Hollis',
       color: 'red',
-      content: `
-        test text mdsfbbafhdbsab hfhfjbabff fasfsfasdj hfjashfjdsah
-        fhjkdkjfljashjfh afsdfdasfasfdsfads fasfdsaff dfasdfdas fasdfsafdsafdsafad
-      `,
+      content: TeamContent.getEricContent(),
     },
     {
       id: 3,
@@ -35,18 +45,16 @@ class TeamContent extends React.Component {
       avatarName: 'Tyler Glaze',
       color: 'yellow',
       content: `
-        test text mdsfbba fhdbsabhfhfjbabff fasfsfasdjhfjashfj dsahfhjkdkjfljashjfh
-        afsdfdasfasfdsfadsfasfdsaffd fasdfdas fasdfsafdsafdsafad
+        Tyler is Eric's sidekick.
       `,
     },
     {
       id: 4,
-      displayName: 'Rebecca Cap4Kidz',
-      avatarName: 'Rebecca Cap4Kidz',
+      displayName: 'Rebecca Daniels',
+      avatarName: 'Rebecca Daniels',
       color: 'blue',
       content: `
-        test text mdsfbbafhdb sabhfhfjbabff fasfsfasdjhfjashfjdsahfh jkdkjfljashjfh
-        afsdfdasfasfdsfa dsfasf dsaffdfasdfdas fasdfsafdsafdsafad
+       Rebecca is rad, and runs a dope chairty.
       `,
     },
   ];
