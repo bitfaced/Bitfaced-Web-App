@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import { PropTypes } from 'prop-types';
 import {
   DEFAULT_CONTENT_NODE,
@@ -22,6 +23,8 @@ class ContentContainer extends React.Component {
 
   getContent = (contentKey) => {
     const { onContentChange } = this.props;
+
+    ReactGA.pageview(contentKey);
     return CONTENT_NODES[contentKey] ? CONTENT_NODES[contentKey].component(onContentChange)
       : CONTENT_NODES.home.component(onContentChange);
   }

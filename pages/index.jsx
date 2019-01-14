@@ -43,7 +43,6 @@ class Index extends React.Component {
     };
 
     ReactGA.initialize('UA-83285751-1');
-    ReactGA.pageview('Home Page');
   }
 
   onContentChange = (newContentState) => {
