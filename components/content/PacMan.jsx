@@ -21,7 +21,7 @@ class PacManContent extends React.Component {
 
   static highScoreUrl = process.env.NODE_ENV !== 'production'
     ? 'http://localhost:3000/api/pacman/highscore'
-    : 'http://ec2-52-14-244-30.us-east-2.compute.amazonaws.com/api/pacman/highscore';
+    : 'http://bitfaced.com/api/pacman/highscore';
 
   constructor(props) {
     super(props);
