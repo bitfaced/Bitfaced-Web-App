@@ -16,6 +16,7 @@ app.prepare()
     const server = express();
 
     server.use(compression());
+    server.disable('x-powered-by');
 
     // GET method route
     server.get('/api/podcast/latest', (req, res) => {
@@ -32,7 +33,10 @@ app.prepare()
       });
     });
 
-    server.get('*', (req, res) => handle(req, res));
+    server.get('*', (req, res) => {
+      res.setHeader('bitfaced-key', '11-11-89');
+      return handle(req, res);
+    });
 
     server.listen(port, (err) => {
       if (err) throw err;
