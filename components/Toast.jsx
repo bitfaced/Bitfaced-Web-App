@@ -235,11 +235,11 @@ export default class Toast extends React.Component {
                     padding: '0px',
                   }}
                 >
-                  <Heading size={200} marginTop={2}>
+                  <Heading size={200} marginTop={4} textAlign="center" width="105%" textDecoration="underline">
                     {title}
                   </Heading>
                 </Button>
-                <Heading size={200} marginTop={2} width="105%">
+                <Heading size={200} marginTop={4} width="105%">
                   {content}
                 </Heading>
               </Alert>
