@@ -23,7 +23,8 @@ const meta = ({ latestPodcast }) => {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="author" content="Eric G. Hollis & Tyler R. Glaze" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <meta name="theme-color" content="#317EFB" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=6, user-scalable=1" />
         <meta charSet="utf-8" />
       </Head>
       <style jsx global>
