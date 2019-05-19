@@ -21,8 +21,25 @@ app.prepare()
     // GET method route
     server.get('/api/podcast/latest', (req, res) => {
       getRssData().then((data) => {
+        const { title, content } = data.items[0];
+        const latestFeedItem = { title, content };
         res.setHeader('Content-Type', 'application/json');
-        res.send(JSON.stringify(data));
+        res.send(JSON.stringify(latestFeedItem));
+      });
+    });
+
+    server.get('/api/podcast/list', (req, res) => {
+      getRssData().then((data) => {
+        const podcasts = [];
+        data.items.forEach((item) => {
+          podcasts.push({
+            title: item.title,
+            link: item.link,
+
+          });
+        });
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(podcasts));
       });
     });
 
