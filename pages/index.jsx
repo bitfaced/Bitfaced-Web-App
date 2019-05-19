@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 
 import Layout from '../components/Layout';
 import ContentContainer from '../components/content/ContentContainer';
-import { DEFAULT_CONTENT_NODE } from '../constants';
+import settings from '../utilities/siteSettings';
 
 const url = process.env.NODE_ENV !== 'production'
   ? 'http://localhost:3000/api/podcast/latest'
@@ -39,7 +39,7 @@ class Index extends React.Component {
     super(props);
 
     this.state = {
-      activeContent: DEFAULT_CONTENT_NODE,
+      activeContent: settings.DEFAULT_CONTENT,
     };
 
     ReactGA.initialize('UA-83285751-1');

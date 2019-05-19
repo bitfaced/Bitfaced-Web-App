@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog, Heading } from 'evergreen-ui';
 import { PropTypes } from 'prop-types';
-import { DEFAULT_CONTENT_NODE } from '../../constants';
+import settings from '../../utilities/siteSettings';
 
 const aboutContainerStyles = {
   width: '80%',
@@ -23,7 +23,7 @@ class ContactContent extends React.Component {
   onClose = () => {
     const { onContentChange } = this.props;
 
-    onContentChange(DEFAULT_CONTENT_NODE);
+    onContentChange(settings.DEFAULT_CONTENT);
   }
 
   render() {
