@@ -2,9 +2,9 @@ import React from 'react';
 import ReactGA from 'react-ga';
 import { PropTypes } from 'prop-types';
 import {
-  DEFAULT_CONTENT_NODE,
   CONTENT_NODES,
 } from '../../constants';
+import settings from '../../utilities/siteSettings';
 
 class ContentContainer extends React.Component {
   static propTypes = {
@@ -13,7 +13,7 @@ class ContentContainer extends React.Component {
   };
 
   static defaultProps = {
-    activeContent: DEFAULT_CONTENT_NODE,
+    activeContent: settings.DEFAULT_CONTENT,
   };
 
   constructor(props) {

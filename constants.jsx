@@ -73,6 +73,4 @@ export const CONTENT_NODES = {
   },
 };
 
-export const DEFAULT_CONTENT_NODE = 'home';
-
 export const noop = () => {};

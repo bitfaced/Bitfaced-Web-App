@@ -1,24 +1,11 @@
 import React from 'react';
+import { Pane } from 'evergreen-ui';
+import PodcastContainer from './PodcastContainer';
 
-const footerStyle = {
-  position: 'absolute',
-  bottom: '-4px',
-  width: '100%',
-};
-
-const PIPPA_EMBED_URL = 'https://player.pippa.io/bitfaced?theme=default&cover=1&latest=1';
-
-const Footer = () => (
-  <div style={footerStyle}>
-    <iframe
-      title="Bitfaced Podcast Media Player"
-      src={PIPPA_EMBED_URL}
-      frameBorder="0"
-      width="100%"
-      height="220px"
-      allow="autoplay"
-    />
-  </div>
+const Footer = episodes => (
+  <Pane background="tint2" position="absolute" bottom="-4px" width="100%">
+    <PodcastContainer episodes={episodes.episodes} />
+  </Pane>
 );
 
 export default Footer;

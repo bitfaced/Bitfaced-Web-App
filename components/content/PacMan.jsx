@@ -4,8 +4,7 @@ import {
   CornerDialog,
 } from 'evergreen-ui';
 import fetch from 'isomorphic-unfetch';
-
-import { DEFAULT_CONTENT_NODE } from '../../constants';
+import settings from '../../utilities/siteSettings';
 
 
 class PacManContent extends React.Component {
@@ -46,7 +45,7 @@ class PacManContent extends React.Component {
   onClose = () => {
     const { onContentChange } = this.props;
 
-    onContentChange(DEFAULT_CONTENT_NODE);
+    onContentChange(settings.DEFAULT_CONTENT);
   }
 
   render() {
