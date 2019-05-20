@@ -7,17 +7,26 @@ import Layout from '../components/Layout';
 import ContentContainer from '../components/content/ContentContainer';
 import settings from '../utilities/siteSettings';
 
-const url = process.env.NODE_ENV !== 'production'
+const episodeLatestUrl = process.env.NODE_ENV !== 'production'
   ? 'http://localhost:3000/api/podcast/latest'
   : 'http://bitfaced.com/api/podcast/latest';
 
+const episodeListUrl = process.env.NODE_ENV !== 'production'
+  ? 'http://localhost:3000/api/podcast/list'
+  : 'http://bitfaced.com/api/podcast/list';
+
+
 class Index extends React.Component {
   static async getInitialProps() {
-    const res = await fetch(url);
+    const res = await fetch(episodeLatestUrl);
     const data = await res.json();
+
+    const result = await fetch(episodeListUrl);
+    const episodes = await result.json();
 
     return {
       latestPodcast: data,
+      episodes,
     };
   }
 
@@ -26,6 +35,10 @@ class Index extends React.Component {
       title: PropTypes.string,
       content: PropTypes.string,
     }),
+    episodes: PropTypes.arrayOf(PropTypes.shape({
+      title: PropTypes.string,
+      link: PropTypes.string,
+    })),
   };
 
   static defaultProps = {
@@ -33,6 +46,7 @@ class Index extends React.Component {
       title: '',
       content: '',
     },
+    episodes: [],
   };
 
   constructor(props) {
@@ -58,12 +72,14 @@ class Index extends React.Component {
 
     const {
       latestPodcast,
+      episodes,
     } = this.props;
 
     return (
       <Layout
         onContentChange={this.onContentChange}
         latestPodcast={latestPodcast}
+        episodes={episodes}
       >
         <ContentContainer
           activeContent={activeContent}

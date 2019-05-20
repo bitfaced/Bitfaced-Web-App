@@ -13,7 +13,12 @@ const layoutStyle = {
   width: '100%',
 };
 
-const Layout = ({ onContentChange, children, latestPodcast }) => (
+const Layout = ({
+  onContentChange,
+  children,
+  latestPodcast,
+  episodes,
+}) => (
   <div style={layoutStyle}>
     <Toast
       style={{ padding: 8, zIndex: 19 }}
@@ -24,7 +29,7 @@ const Layout = ({ onContentChange, children, latestPodcast }) => (
       latestPodcast={latestPodcast}
     />
     {children}
-    <Footer />
+    <Footer episodes={episodes} />
   </div>
 );
 
@@ -35,6 +40,10 @@ Layout.propTypes = {
     title: PropTypes.string,
     content: PropTypes.string,
   }),
+  episodes: PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    link: PropTypes.string,
+  })),
 };
 
 Layout.defaultProps = {
@@ -43,6 +52,7 @@ Layout.defaultProps = {
     title: '',
     content: '',
   },
+  episodes: [],
 };
 
 export default Layout;
