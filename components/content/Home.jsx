@@ -5,8 +5,8 @@ import React from 'react';
 import MediaQuery from 'react-responsive';
 import { PropTypes } from 'prop-types';
 
-const PORTRAIT_BOTTOM = '410px';
-const PORTRAIT_LANDSCAPE = '415px';
+const PORTRAIT_BOTTOM = '460px';
+const PORTRAIT_LANDSCAPE = '455px';
 
 const logoStylesPortrait = {
   width: '70%',
