@@ -30,14 +30,7 @@ app.prepare()
 
     server.get('/api/podcast/list', (req, res) => {
       getRssData().then((data) => {
-        const podcasts = [];
-        data.items.forEach((item) => {
-          podcasts.push({
-            title: item.title,
-            link: item.link,
-
-          });
-        });
+        const podcasts = (data.items || []).map(item => ({ title: item.title, link: item.link }));
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(podcasts));
       });
