@@ -20,22 +20,19 @@ class PodcastList extends React.Component {
 
   renderEpisodeList() {
     const { episodes, onEpisodeSelect } = this.props;
-    const rows = [];
-    episodes.forEach((episode) => {
-      rows.push(
-        <Table.Row
-          key={episode.link}
-          isSelectable
-          onSelect={() => {
-            onEpisodeSelect(episode);
-          }}
-        >
-          <Table.TextCell>
-            {episode.title}
-          </Table.TextCell>
-        </Table.Row>,
-      );
-    });
+    const rows = (episodes || []).map(episode => (
+      <Table.Row
+        key={episode.link}
+        isSelectable
+        onSelect={() => {
+          onEpisodeSelect(episode);
+        }}
+      >
+        <Table.TextCell>
+          {episode.title}
+        </Table.TextCell>
+      </Table.Row>
+    ));
 
     return rows;
   }
