@@ -6,7 +6,7 @@ const getRssData = require('./server/api/bfRssToJson');
 const getHighScoreData = require('./server/api/getHighScores');
 
 const dev = process.env.NODE_ENV !== 'production';
-const port = process.env.NODE_ENV !== 'production' ? 3000 : 80;
+const port = dev ? 3000 : 80;
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
