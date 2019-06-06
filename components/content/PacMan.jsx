@@ -24,19 +24,17 @@ class PacManContent extends React.Component {
     this.getHighScores();
   }
 
-  getHighScores = () => fetch(settings.URL_PACMAN_HIGHSCORE)
-    .then((response) => {
-      if (response.status >= 400) {
-        throw new Error('Bad response from server');
-      }
+  getHighScores = async () => {
+    const response = await fetch(settings.URL_PACMAN_HIGHSCORE);
+    if (response.status >= 400) {
+      throw new Error('Bad response from server');
+    }
 
-      return response.json();
-    })
-    .then((stories) => {
-      this.setState({
-        highScores: stories,
-      });
+    const stories = await response.json();
+    this.setState({
+      highScores: stories,
     });
+  }
 
   onClose = () => {
     const { onContentChange } = this.props;
