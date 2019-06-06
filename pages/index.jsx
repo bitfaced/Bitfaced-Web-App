@@ -7,21 +7,12 @@ import Layout from '../components/Layout';
 import ContentContainer from '../components/content/ContentContainer';
 import settings from '../utilities/siteSettings';
 
-const episodeLatestUrl = process.env.NODE_ENV !== 'production'
-  ? 'http://localhost:3000/api/podcast/latest'
-  : 'http://bitfaced.com/api/podcast/latest';
-
-const episodeListUrl = process.env.NODE_ENV !== 'production'
-  ? 'http://localhost:3000/api/podcast/list'
-  : 'http://bitfaced.com/api/podcast/list';
-
-
 class Index extends React.Component {
   static async getInitialProps() {
-    const res = await fetch(episodeLatestUrl);
+    const res = await fetch(settings.URL_PODCAST_LATEST);
     const data = await res.json();
 
-    const result = await fetch(episodeListUrl);
+    const result = await fetch(settings.URL_PODCAST_LIST);
     const episodes = await result.json();
 
     return {
