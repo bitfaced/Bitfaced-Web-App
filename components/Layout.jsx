@@ -18,6 +18,7 @@ const Layout = ({
   children,
   latestPodcast,
   episodes,
+  lastPlayedEpisode,
 }) => (
   <div style={layoutStyle}>
     <Toast
@@ -29,7 +30,7 @@ const Layout = ({
       latestPodcast={latestPodcast}
     />
     {children}
-    <Footer episodes={episodes} />
+    <Footer episodes={episodes} lastPlayedEpisode={lastPlayedEpisode} />
   </div>
 );
 
@@ -44,6 +45,7 @@ Layout.propTypes = {
     title: PropTypes.string,
     link: PropTypes.string,
   })),
+  lastPlayedEpisode: PropTypes.string,
 };
 
 Layout.defaultProps = {
@@ -53,6 +55,7 @@ Layout.defaultProps = {
     content: '',
   },
   episodes: [],
+  lastPlayedEpisode: undefined,
 };
 
 export default Layout;
