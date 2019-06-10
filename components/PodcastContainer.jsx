@@ -27,13 +27,18 @@ class PodcastContainer extends React.Component {
   getEpisodeToPlay() {
     // eslint-disable-next-line react/prop-types
     const { episodes, lastPlayedEpisode } = this.props;
+    let matchingEpisode = null;
     if (lastPlayedEpisode) {
-      const titles = episodes.map(episode => episode.title);
-      const episodeIndex = titles.findIndex(
-        episodeName => episodeName === lastPlayedEpisode,
-      );
-      if (episodeIndex !== -1) {
-        return episodes[episodeIndex];
+      (episodes || []).some((episode) => {
+        if (episode.title === lastPlayedEpisode) {
+          matchingEpisode = episode;
+          return true;
+        }
+        return false;
+      });
+
+      if (matchingEpisode !== null) {
+        return matchingEpisode;
       }
     }
     return episodes[0];
