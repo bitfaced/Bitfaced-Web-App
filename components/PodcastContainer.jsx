@@ -10,27 +10,30 @@ class PodcastContainer extends React.Component {
       title: PropTypes.string,
       link: PropTypes.string,
     })).isRequired,
-    lastPlayedEpisode: PropTypes.string,
   };
-
-  static defaultProps = {
-    lastPlayedEpisode: undefined,
-  }
 
   constructor(props) {
     super(props);
     this.state = {
-      currentEpisodeLink: this.getEpisodeToPlay().link,
+      currentEpisodeLink: '',
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      currentEpisodeLink: this.getEpisodeToPlay().link,
+    });
   }
 
   getEpisodeToPlay() {
     // eslint-disable-next-line react/prop-types
-    const { episodes, lastPlayedEpisode } = this.props;
+    const { episodes } = this.props;
     let matchingEpisode = null;
-    if (lastPlayedEpisode) {
+    // eslint-disable-next-line no-undef
+    const lastPlayedTitle = localStorage.getItem('LAST_PLAYED');
+    if (lastPlayedTitle) {
       (episodes || []).some((episode) => {
-        if (episode.title === lastPlayedEpisode) {
+        if (episode.title === lastPlayedTitle) {
           matchingEpisode = episode;
           return true;
         }
@@ -46,7 +49,7 @@ class PodcastContainer extends React.Component {
 
   updatePlayer = (newEpisode) => {
     // eslint-disable-next-line no-undef
-    document.cookie = `LAST_PLAYED=${newEpisode.title}`;
+    localStorage.setItem('LAST_PLAYED', newEpisode.title);
     this.setState({
       currentEpisodeLink: newEpisode.link,
     });
@@ -55,7 +58,7 @@ class PodcastContainer extends React.Component {
   goToLatest = () => {
     const { episodes } = this.props;
     // eslint-disable-next-line no-undef
-    document.cookie = 'LAST_PLAYED=""';
+    localStorage.removeItem('LAST_PLAYED');
     this.setState({
       currentEpisodeLink: episodes[0].link,
     });
