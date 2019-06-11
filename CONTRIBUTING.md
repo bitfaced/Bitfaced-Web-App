@@ -11,10 +11,11 @@
   - Ensure you have squashed additional commits into specfic and purposeful and consice messages. Idealy one commit per feature.
 4. Rebase on HEAD of develop, fix conflicts, if needed
   - `git checkout develop && git pull`
+  - `git checkout <feature-branch-name> && git rebase develop`
   - Push feature branch to origin so PR can be created
   - `git push`
 6. Create Pull Request
-  - Visit https://github.com/naed11/Bitfaced-Web-App/branches 
+  - Visit https://github.com/bitfaced/Bitfaced-Web-App/branches 
   - Find the pushed feature branch
   - Create a Pull Request of <feature-branch-name> into develop, and submit PR
 7. Pull Request - Code Reviews, discussions, and feedback
