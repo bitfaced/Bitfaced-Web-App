@@ -10,6 +10,7 @@ class ContentContainer extends React.Component {
   static propTypes = {
     activeContent: PropTypes.string,
     onContentChange: PropTypes.func.isRequired,
+    imagePosition: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -22,16 +23,16 @@ class ContentContainer extends React.Component {
   }
 
   getContent = (contentKey) => {
-    const { onContentChange } = this.props;
+    const { onContentChange, imagePosition } = this.props;
 
     ReactGA.pageview(contentKey);
-    return CONTENT_NODES[contentKey] ? CONTENT_NODES[contentKey].component(onContentChange)
-      : CONTENT_NODES.home.component(onContentChange);
+    return CONTENT_NODES[contentKey]
+      ? CONTENT_NODES[contentKey].component(onContentChange, imagePosition)
+      : CONTENT_NODES.home.component(onContentChange, imagePosition);
   }
 
   render() {
     const { activeContent } = this.props;
-
     return (
       <div>{this.getContent(activeContent)}</div>
     );
