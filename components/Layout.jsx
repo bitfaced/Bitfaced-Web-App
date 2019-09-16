@@ -18,6 +18,8 @@ const Layout = ({
   children,
   latestPodcast,
   episodes,
+  listHeight,
+  togglePlayList,
 }) => (
   <div style={layoutStyle}>
     <Toast
@@ -29,13 +31,18 @@ const Layout = ({
       latestPodcast={latestPodcast}
     />
     {children}
-    <Footer episodes={episodes} />
+    <Footer
+      episodes={episodes}
+      listHeight={listHeight}
+      togglePlayList={togglePlayList}
+    />
   </div>
 );
 
 Layout.propTypes = {
   children: PropTypes.node,
   onContentChange: PropTypes.func.isRequired,
+  togglePlayList: PropTypes.func.isRequired,
   latestPodcast: PropTypes.shape({
     title: PropTypes.string,
     content: PropTypes.string,
@@ -44,6 +51,7 @@ Layout.propTypes = {
     title: PropTypes.string,
     link: PropTypes.string,
   })),
+  listHeight: PropTypes.number,
 };
 
 Layout.defaultProps = {
@@ -53,6 +61,7 @@ Layout.defaultProps = {
     content: '',
   },
   episodes: [],
+  listHeight: 0,
 };
 
 export default Layout;

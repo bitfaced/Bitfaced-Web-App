@@ -45,6 +45,8 @@ class Index extends React.Component {
 
     this.state = {
       activeContent: settings.DEFAULT_CONTENT,
+      listHeight: 0,
+      imagePosition: '210px',
     };
 
     ReactGA.initialize('UA-83285751-1');
@@ -56,9 +58,19 @@ class Index extends React.Component {
     });
   };
 
+  togglePlayList = () => {
+    const { listHeight, imagePosition } = this.state;
+    this.setState({
+      listHeight: listHeight === 0 ? 240 : 0,
+      imagePosition: imagePosition === '210px' ? '450px' : '210px',
+    });
+  };
+
   render() {
     const {
       activeContent,
+      listHeight,
+      imagePosition,
     } = this.state;
 
     const {
@@ -71,10 +83,13 @@ class Index extends React.Component {
         onContentChange={this.onContentChange}
         latestPodcast={latestPodcast}
         episodes={episodes}
+        listHeight={listHeight}
+        togglePlayList={this.togglePlayList}
       >
         <ContentContainer
           activeContent={activeContent}
           onContentChange={this.onContentChange}
+          imagePosition={imagePosition}
         />
       </Layout>
     );

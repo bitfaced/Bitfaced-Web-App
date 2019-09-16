@@ -10,6 +10,8 @@ class PodcastContainer extends React.Component {
       title: PropTypes.string,
       link: PropTypes.string,
     })).isRequired,
+    listHeight: PropTypes.number.isRequired,
+    togglePlayList: PropTypes.func.isRequired,
   };
 
   constructor(props) {
@@ -62,16 +64,31 @@ class PodcastContainer extends React.Component {
     this.setState({
       currentEpisodeLink: episodes[0].link,
     });
+  };
+
+  toggleList = () => {
+    const { togglePlayList } = this.props;
+    togglePlayList();
   }
 
   render() {
     const { currentEpisodeLink } = this.state;
-    const { episodes } = this.props;
+    const { episodes, listHeight } = this.props;
     return (
       <div>
         <PodcastPlayer embedUrl={currentEpisodeLink} />
         <Button appearance="minimal" onClick={this.goToLatest}>Go to Latest Episode</Button>
-        <PodcastList episodes={episodes} onEpisodeSelect={this.updatePlayer} />
+        <Button appearance="minimal" onClick={this.toggleList}>{
+          listHeight === 0
+            ? 'Show More'
+            : 'Hide List'
+          }
+        </Button>
+        <PodcastList
+          listHeight={listHeight}
+          episodes={episodes}
+          onEpisodeSelect={this.updatePlayer}
+        />
       </div>
     );
   }

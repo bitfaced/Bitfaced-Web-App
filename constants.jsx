@@ -11,9 +11,10 @@ export const CONTENT_NODES = {
   home: {
     displayName: 'Home',
     iconKey: 'home',
-    component: onContentChange => (
+    component: (onContentChange, imagePosition) => (
       <HomeContent
         onContentChange={onContentChange}
+        imagePosition={imagePosition}
       />
     ),
   },

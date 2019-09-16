@@ -5,40 +5,10 @@ import React from 'react';
 import MediaQuery from 'react-responsive';
 import { PropTypes } from 'prop-types';
 
-const PORTRAIT_BOTTOM = '450px';
-const PORTRAIT_LANDSCAPE = '450px';
-
-const logoStylesPortrait = {
-  width: '70%',
-  marginLeft: '15%',
-  position: 'absolute',
-  bottom: PORTRAIT_BOTTOM,
-};
-
-const logoStylesSmallPortrait = {
-  width: '50%',
-  marginLeft: '25%',
-  position: 'absolute',
-  bottom: PORTRAIT_BOTTOM,
-};
-
-const logoStylesLandscape = {
-  width: '20%',
-  marginLeft: '40%',
-  position: 'absolute',
-  bottom: PORTRAIT_LANDSCAPE,
-};
-
-const logoStylesBigLandscape = {
-  width: '30%',
-  marginLeft: '35%',
-  position: 'absolute',
-  bottom: PORTRAIT_LANDSCAPE,
-};
-
 class HomeContent extends React.Component {
   static propTypes = {
     onContentChange: PropTypes.func.isRequired,
+    imagePosition: PropTypes.string.isRequired,
   }
 
   static LOGO_URL = 'https://s3.us-east-2.amazonaws.com/bitfaced/logo.png';
@@ -56,6 +26,39 @@ class HomeContent extends React.Component {
 
 
   render() {
+    const { imagePosition } = this.props;
+    const logoStylesPortrait = {
+      width: '70%',
+      marginLeft: '15%',
+      position: 'absolute',
+      transition: '0.3s ease-in-out all',
+      bottom: imagePosition,
+    };
+
+    const logoStylesSmallPortrait = {
+      width: '50%',
+      marginLeft: '25%',
+      position: 'absolute',
+      transition: '0.3s ease-in-out all',
+      bottom: imagePosition,
+    };
+
+    const logoStylesLandscape = {
+      width: '20%',
+      marginLeft: '40%',
+      position: 'absolute',
+      transition: '0.3s ease-in-out all',
+      bottom: imagePosition,
+    };
+
+    const logoStylesBigLandscape = {
+      width: '30%',
+      marginLeft: '35%',
+      position: 'absolute',
+      transition: '0.3s ease-in-out all',
+      bottom: imagePosition,
+    };
+
     return (
       <div>
         <MediaQuery orientation="portrait" minDeviceWidth={500}>

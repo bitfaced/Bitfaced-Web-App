@@ -2,8 +2,6 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Table } from 'evergreen-ui';
 
-const HEIGHT_EPISODE_LIST = 240;
-
 class PodcastList extends React.Component {
   static propTypes = {
     episodes: PropTypes.arrayOf(PropTypes.shape({
@@ -11,6 +9,7 @@ class PodcastList extends React.Component {
       link: PropTypes.string,
     })).isRequired,
     onEpisodeSelect: PropTypes.func.isRequired,
+    listHeight: PropTypes.number.isRequired,
   };
 
   getLatestEpisode() {
@@ -38,9 +37,10 @@ class PodcastList extends React.Component {
   }
 
   render() {
+    const { listHeight } = this.props;
     return (
       <Table background="tint2">
-        <Table.Body height={HEIGHT_EPISODE_LIST}>
+        <Table.Body transition="0.3s ease-in-out all" height={listHeight}>
           { this.renderEpisodeList() }
         </Table.Body>
       </Table>
