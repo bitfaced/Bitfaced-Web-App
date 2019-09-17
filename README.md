@@ -5,6 +5,8 @@ An Open Sourced Community Driven Web Application built using Node.js, Express, [
 -- [**Bitfaced Web App**](https://bitfaced.com)
 
 [![buddy pipeline](https://app.buddy.works/naed11/bitfaced-web-app/pipelines/pipeline/210988/badge.svg?token=1f813d5ab3f0d84aacfcf867ab5568a428c4d69cb8ef30b1f1784d0a3eb9f59b "buddy pipeline")](https://app.buddy.works/naed11/bitfaced-web-app/pipelines/pipeline/210988)
+
+
 Prerequisites
 -----
 
