@@ -4,10 +4,9 @@
 
 An Open Sourced Community Driven Web Application built using Node.js, Express, [React](https://reactjs.org/), [Next.js](https://nextjs.org/), and [Evergreen-UI](https://evergreen.segment.com/components) and hosted with [AWS Free-tier tech](https://aws.amazon.com/free/).
 
--- [**Bitfaced Web App**](http://ec2-52-14-244-30.us-east-2.compute.amazonaws.com/)
+-- [**Bitfaced Web App**](https://bitfaced.com)
 
--- [**Bitfaced Jenkins Server**](http://ec2-54-210-215-229.compute-1.amazonaws.com:8080/)
-
+[![buddy pipeline](https://app.buddy.works/naed11/bitfaced-web-app/pipelines/pipeline/210988/badge.svg?token=1f813d5ab3f0d84aacfcf867ab5568a428c4d69cb8ef30b1f1784d0a3eb9f59b "buddy pipeline")](https://app.buddy.works/naed11/bitfaced-web-app/pipelines/pipeline/210988)
 Prerequisites
 -----
 
