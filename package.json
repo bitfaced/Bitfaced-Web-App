@@ -36,7 +36,6 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.2",
-    "forever": "^0.15.3",
-    "npm": "^6.9.0"
+    "npm": "^6.11.3"
   }
 }
