@@ -1,7 +1,5 @@
 # Bitfaced Web Application
 
-[![Build Status](http://ec2-54-210-215-229.compute-1.amazonaws.com:8080/buildStatus/icon?job=BitFacedBuildDeploy)](http://ec2-54-210-215-229.compute-1.amazonaws.com:8080/job/BitFacedBuildDeploy/)
-
 An Open Sourced Community Driven Web Application built using Node.js, Express, [React](https://reactjs.org/), [Next.js](https://nextjs.org/), and [Evergreen-UI](https://evergreen.segment.com/components) and hosted with [AWS Free-tier tech](https://aws.amazon.com/free/).
 
 -- [**Bitfaced Web App**](https://bitfaced.com)
