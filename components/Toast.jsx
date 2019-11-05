@@ -9,6 +9,7 @@ import {
   Button,
 } from 'evergreen-ui';
 import { PropTypes } from 'prop-types';
+import GrumpySpeech from '../utilities/GrumpySpeech';
 
 const animationEasing = {
   deceleration: 'cubic-bezier(0.0, 0.0, 0.2, 1)',
@@ -79,8 +80,9 @@ export default class Toast extends React.Component {
       height: 0,
       duration: 1000,
       zIndex: 19,
-      playedTitleMessage: false,
     };
+
+    this.speech = null;
   }
 
   close = () => {
@@ -150,28 +152,12 @@ export default class Toast extends React.Component {
   }
 
   onTitleClick = () => {
-    const {
-      playedTitleMessage,
-    } = this.state;
-
-    if (!playedTitleMessage) {
-      if (typeof window !== 'undefined' && window.SpeechSynthesisUtterance) {
-        const voices = window.speechSynthesis.getVoices();
-        // eslint-disable-next-line no-unused-vars
-        const voice = voices[17];
-        const string = `Welcome to Bitfaced, my bity bity bitches! Don't forget to checkout the latest podcast,${this.getTitle()}`;
-        const msg = new window.SpeechSynthesisUtterance(string);
-        msg.voice = voice;
-        // msg.pitch = 0.5;
-        // msg.rate = 0.5;
-        window.speechSynthesis.speak(msg);
-
-        this.setState({
-          playedTitleMessage: true,
-        });
-      }
+    if (!this.speech) {
+      this.speech = new GrumpySpeech();
     }
-  };
+
+    this.speech.Speak(`Welcome to Bitfaced, my bity bity bitches! Don't forget to checkout the latest podcast,${this.getTitle()}`);
+  }
 
   render() {
     const {
