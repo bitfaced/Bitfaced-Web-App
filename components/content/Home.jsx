@@ -11,7 +11,7 @@ class HomeContent extends React.Component {
     imagePosition: PropTypes.string.isRequired,
   }
 
-  static LOGO_URL = 'https://s3.us-east-2.amazonaws.com/bitfaced/logo.png';
+  static LOGO_URL = 'https://bitfaced-assets.s3.us-east-2.amazonaws.com/Bitfaced+logo.png';
 
   constructor(props) {
     super(props);

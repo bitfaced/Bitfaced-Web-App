@@ -39,9 +39,9 @@ const meta = ({ latestPodcast }) => {
         }
 
         body {
-          background: url(https://s3.us-east-2.amazonaws.com/bfpc/bgmaybe.jpg);
+          background: url(https://bitfaced-assets.s3.us-east-2.amazonaws.com/siBackground.jpg);
           background-size: cover;
-          background-position-x: 10%;
+          background-position: center;
           background-repeat: no-repeat;
         }
       `}
