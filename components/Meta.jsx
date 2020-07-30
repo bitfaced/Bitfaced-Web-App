@@ -13,10 +13,11 @@ const meta = ({ latestPodcast }) => {
         </title>
         <link rel="icon" type="image/png" href="https://res.cloudinary.com/pippa/image/fetch/h_32,w_32,f_auto/https://assets.pippa.io/shows/5aa6c68ed19e4ab7501ffd5d/show-cover.jpg" data-react-helmet="true" />
         <meta httpEquiv="Content-Language" content="en" />
-        <meta name="og:type" content="website" />
-        <meta name="og:url" content="http://bitfaced.com" />
-        <meta name="og:title" content={title} />
-        <meta name="og:image" content="https://s3.us-east-2.amazonaws.com/bfpc/logobecs.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://bitfaced.com" />
+        <meta property="og:title" content={title} />
+        <meta property="og:image" content="https://bitfaced-assets.s3.us-east-2.amazonaws.com/Bitfaced+logo.png" />
+        <meta property="og:description" content={latestPodcast.content} />
         <meta name="msvalidate.01" content="397DC1B89F47E94AE576233E3E3D298B" />
         <meta name="google-site-verification" content="Skr1DY0RuQrohFqXu5sk0WcMzZp-OVC7inox9ihM0ng" />
         <meta name="Description" content={latestPodcast.content} />
