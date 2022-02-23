@@ -124,7 +124,7 @@ export default class Toast extends React.Component {
       latestPodcast,
     } = this.props;
 
-    return (!latestPodcast.content) ? '' : `${latestPodcast.content}`;
+    return (!latestPodcast.content) ? '' : `${latestPodcast.content.replace(/<[^>]*>?/gm, '')}`;
   };
 
   handleMouseEnter = () => {
