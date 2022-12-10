@@ -15,7 +15,7 @@
   "dependencies": {
     "compression": "^1.7.3",
     "evergreen-ui": "^4.8.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "glamor": "^2.20.40",
     "install": "^0.12.2",
     "isomorphic-unfetch": "^3.0.0",
